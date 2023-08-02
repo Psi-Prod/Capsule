@@ -41,7 +41,7 @@ module Response = struct
     let code = int_of_code status in
     let meta, body =
       match status with
-      | Success (m, b) ->  (Mime.to_string m,Some b)
+      | Success (m, b) -> (Mime.to_string m, Some b)
       | SlowDown n -> (Int.to_string n, None)
       | Input msg | SensitiveInput msg | ... msg -> (msg, None)
     in

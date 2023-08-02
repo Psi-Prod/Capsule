@@ -24,6 +24,6 @@
 {%- autoescape false -%}
 
 {{ body }}
-=> /gemlog.gmi Back to gemlog index
+=> /gemlog.gmi Retour au gemlog
 
 {%- endautoescape -%}

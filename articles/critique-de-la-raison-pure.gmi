@@ -42,12 +42,11 @@ Cette forme génère donc une ambiguïté avec un if else complet classique si l
 Ça ne me choque pas d'avoir ce sucre syntaxique pour cette forme, très pratique quand on travaille avec des tableaux, dans un langage en partie impératif comme OCaml. Utiliser les délimiteurs begin/end dans la branche du if me paraît être le bon compromis à un `let _ = ... in ...` :
 
 ```ocaml
-  if cond then begin
-    do_something ();
-    do_something ()
-  end else
+if cond then begin
+  do_something ();
+  do_something ()
+end else
     do_something_else ()
-
 ```
 
 ## Incohérence dans la syntaxe
