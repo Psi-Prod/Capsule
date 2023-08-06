@@ -212,7 +212,7 @@ Avec elle on peut utiliser la librairie Eio que Tim va utiliser pour écrire une
 Mehari change donc de forme et devient :
 * La partie (`mehari`) comme avant sans côté mirage
 * Une autre partie (`mehari_mirage`) compatible Mirage
-* Une autre partie (`mmehari_lwt_unix`) qui utilise `mehari.mirage` (`mehari.unix` d'avant)
+* Une autre partie (`mehari_lwt_unix`) qui utilise `mehari.mirage` (`mehari.unix` d'avant)
 * Et une dernière (`mehari_eio`) qui comme son nom l'indique utilise `eio`.
 
 Avant d'arriver à la vraie solution, en cherchant un peu une des causes "habituelles" (même s'il faut chercher pour se taper un tel truc) est que le serveur ne trouve pas d'algorithme qu'il supporte dans la liste fournie par le "client hello" et FIN directement. Seulement ça n'arrive uniquement (j'imagine) quand on utilise un client SSL ou TLSv1 donc bon.
