@@ -26,7 +26,7 @@
 
 # Relaie
 
-Des liens vers des blog post (mostly in french).
+Des liens vers des blog post (en français ou en anglais).
 
 => https://caml.inria.fr/pub/old_caml_site/ocaml/numerical.html
 => https://lukesmith.xyz/articles/matrix-vs-xmpp/
