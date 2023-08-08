@@ -8,14 +8,14 @@ tags:
   - gemini
 ---
 
-> Après avoir utilisé et implémenté le protocole Gemini comme des crasseux (côté client : Indigobi et côté serveur : Mehari), on a relevé plusieurs voies d'améliorations. On ne traîne pas vraiment avec la "communauté" Gemini, on relèvera donc essentiellement les points techniques dans ce billet.
+> Après avoir utilisé et implémenté le protocole Gemini comme des crasseux (côté client : Indigobi et côté serveur : Mehari), on a relevé plusieurs voies d'améliorations. On ne traîne pas vraiment avec la « communauté » Gemini, on relèvera donc essentiellement les points techniques dans ce billet.
 
 ## Contenu
 
 ### Gemtext
 
 Tim :
-> La philosophie du format définit par Gemini, le Gemtext, est parfaite. La promesse d'avoir seulement à parser les 3 premiers caractères pour connaître le "type" de ligne est tenue et l'on peut très bien se passer de regex. Le seul petit bémol est l'absence de balise « inline » pour souligner des termes techniques ou encore des morceaux de code. Ces derniers manquent cruellement lorsqu'on écrit des articles avec un peu de code, mais ne sont de toute façon pas fidèle à la philosophie "des 3 premiers caractères". Ce défaut est comblé par le fait que ce soit désormais une sorte de convention parmi les auteurs d'utiliser des `doubles backquotes`.
+> La philosophie du format définit par Gemini, le Gemtext, est parfaite. La promesse d'avoir seulement à parser les 3 premiers caractères pour connaître le « type »  de ligne est tenue et l'on peut très bien se passer de regex. Le seul petit bémol est l'absence de balise « inline » pour souligner des termes techniques ou encore des morceaux de code. Ces derniers manquent cruellement lorsqu'on écrit des articles avec un peu de code, mais ne sont de toute façon pas fidèle à la philosophie « des 3 premiers caractères ». Ce défaut est comblé par le fait que ce soit désormais une sorte de convention parmi les auteurs d'utiliser des `doubles backquotes`.
 
 ### Codes ANSI
 
@@ -34,9 +34,9 @@ Léo :
 ## CGI
 
 Tim :
-> La norme CGI (Common Gateway Interface) a pour but de normaliser l'appel de script externe afin de déléguer la génération du header et du body de la réponse via une impression sur la sortie standard. Malheureusement, cette norme a été conçue principalement pour fonctionner avec le protocole HTTP. Nous sommes ainsi contraints par soucis de compatibilité de laisser quelques "meta-variable" avec une valeur vide étant donné qu'elles n'ont pas de sens dans le contexte du protocole Gemini. Ceci n'aurait pas encore été trop dérangeant si en plus de cela la norme CGI n'incitait pas le serveur à définir des variables d'environnement accessibles au script dans des formats non spécifiés par le RFC. Chaque implémentation serveur Gemini supporte donc CGI à sa sauce, en résulte une grosse tambouille informe.
+> La norme CGI (Common Gateway Interface) a pour but de normaliser l'appel de script externe afin de déléguer la génération du header et du body de la réponse via une impression sur la sortie standard. Malheureusement, cette norme a été conçue principalement pour fonctionner avec le protocole HTTP. Nous sommes ainsi contraints par soucis de compatibilité de laisser quelques « meta-variable » avec une valeur vide étant donné qu'elles n'ont pas de sens dans le contexte du protocole Gemini. Ceci n'aurait pas encore été trop dérangeant si en plus de cela la norme CGI n'incitait pas le serveur à définir des variables d'environnement accessibles au script dans des formats non spécifiés par le RFC. Chaque implémentation serveur Gemini supporte donc CGI à sa sauce, en résulte une grosse tambouille informe.
 >
-> Une liste de "meta-variable" préconisées présente dans la spécification de Gemini ou même un document indiquant les meilleures pratiques n'auraient pas été de refus, même si le support de CGI semble plutôt être une fonctionnalité de niche au cas d'usage peu nombreux.
+> Une liste de « meta-variable » préconisées présente dans la spécification de Gemini ou même un document indiquant les meilleures pratiques n'auraient pas été de refus, même si le support de CGI semble plutôt être une fonctionnalité de niche au cas d'usage peu nombreux.
 
 ## schway oldbie web xd
 
@@ -49,12 +49,12 @@ Léo :
 Léo :
 > Seulement on ressent vite le besoin d'images inlinées, les pages HTML permettaient une expression artistique visuelle relativement sympa contrairement au plain text qu'offrait Gopher ou Gemini (ok y'a l'ASCII art mais vous comprenez).
 > J'ai pas encore testé mais il aurait été sympa que le support du Shift_JIS soit également standardisé parce que c'est beaucoup moins sympa sans, ça faisait aussi partie du charme des vieux BBS japonais.
-> Après, se plaindre qu'il n'y a pas d'images inlinées dans un protocole "orienté texte" c'est attardé désolé je recommencerais plus.
+> Après, se plaindre qu'il n'y a pas d'images inlinées dans un protocole « orienté texte » c'est attardé désolé je recommencerais plus.
 
 ## Indicateur de taille dans le header / streams
 
 Léo :
-> À priori la création de streams TCP "continus" (je sais pas comment on dit correctement) est autorisé ou du moins non spécifié (encore !) dans la spécification et certains clients les supportent, où le chargement de la page est infini.
+> À priori la création de streams TCP « continus » (je sais pas comment on dit correctement) est autorisé ou du moins non spécifié (encore !) dans la spécification et certains clients les supportent, où le chargement de la page est infini.
 > Cela implique qu'on ne met pas de timeout côté client !
 > Dans la FAQ sur le site
 => gemini://gemini.circumlunar.space/docs/best-practices.gmi

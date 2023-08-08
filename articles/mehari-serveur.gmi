@@ -14,7 +14,7 @@ tags:
 
 ⚠️ TW : Article très moche avec de nombreuses profanités, malgré tout publié
 
-Le principal problème est la stack TCP/IP puisqu'on ne peut pas utiliser la librairie "Unix" (présente dans la librairie standard) sinon ce n'est pas compatible Mirage.
+Le principal problème est la stack TCP/IP puisqu'on ne peut pas utiliser la librairie Unix (présente dans la librairie standard) sinon ce n'est pas compatible Mirage.
 On peut donc aller la chercher dans le type de module `Tcpip.Stack.V4V6` (celui que Tim a choisi dans `server_impl`)
 on y trouve :
 ```ocaml
@@ -106,7 +106,7 @@ On en reparle donc en message privé avant que Dinosaure ne réponde et là on s
 > Le condor du plateau — 18/11/2022 12:46
 > so I just have to make an entry point and then adapt it in the default implementation of the library
 > I was doing it wrong, thank you 🥹
-(Lire : "éjacule-moi dessus")
+(Lire : « éjacule-moi dessus »)
 
 > dinosaure — 18/11/2022 12:56
 > the reason behind is: the connect function (for any device) depends on the implementation (and should not be exposed by the interface)
@@ -126,7 +126,7 @@ Mais cette fois j'eu la présence d'esprit de vérifier si c'était la bonne adr
 ```
 127.0.0.0/8
 ```
-"Tiens tiens tiens"
+« Tiens tiens tiens »
 Il manque un 1 !
 J'essaie donc de remplacer par `127.0.0.1/8` (avec `Ipaddr.V4.Prefix.of_string_exn` parce que flemme de propager le `result`).
 Là oui ça marche youpi !
@@ -144,10 +144,10 @@ Donc pareil je demande à Tim de poser la question sur le Discord :
 > I'm using this function :
 => https://mirage.github.io/mirage-tcpip/tcpip/Tcpip/Stack/module-type-V4V6/TCP/index.html#val-listen
 
-Vous remarquerez que l'on s'est trompé de nom de fonction et il manque un `in` donc on aura droit à un message d'étonnement de la part de "anmonteiro" (autre illustre membre de la communauté (réalisation d'un serveur HTTP en OCaml !)).
+Vous remarquerez que l'on s'est trompé de nom de fonction et il manque un `in` donc on aura droit à un message d'étonnement de la part de « anmonteiro » (autre illustre membre de la communauté (réalisation d'un serveur HTTP en OCaml !)).
 Étant de véritables singes, on ne corrigera l'erreur que trop tard après humiliation.
 
-"mseri" (illustre membre de la communauté OCaml également) nous aura proposé une piste un peu plus tôt :
+« mseri » (illustre membre de la communauté OCaml également) nous aura proposé une piste un peu plus tôt :
 
 > mseri — 22/11/2022 23:44
 > Have you tried to flush before listening?
@@ -187,7 +187,7 @@ Après une semaine d'attente impatiente, Dinosaure est sorti de sa longue réfle
 => https://paste.osau.re/Ytm?hl=ocaml#eyJhbGciOiJBMTI4Q0JDIiwiZXh0Ijp0cnVlLCJrIjoiREN6bVhZMm5jQTBQdXFCMGdTNktzUSIsImtleV9vcHMiOlsiZW5jcnlwdCIsImRlY3J5cHQiXSwia3R5Ijoib2N0In0= Exemple de Dinosaure
 
 Bien évidemment, son petit exemple est parfait.
-On remplace tout comme il faut, et là encore un problème : le client envoie un "hello" mais le serveur, au lieu d'envoyer le sien, envoie un paquet FIN et la connexion se termine là-dessus.
+On remplace tout comme il faut, et là encore un problème : le client envoie un « hello » mais le serveur, au lieu d'envoyer le sien, envoie un paquet FIN et la connexion se termine là-dessus.
 C'est relativement problématique, mais comme à notre habitude :
 
 > Le condor du plateau — 2022/11/30 22:42
@@ -215,7 +215,7 @@ Mehari change donc de forme et devient :
 * Une autre partie (`mehari_lwt_unix`) qui utilise `mehari.mirage` (`mehari.unix` d'avant)
 * Et une dernière (`mehari_eio`) qui comme son nom l'indique utilise `eio`.
 
-Avant d'arriver à la vraie solution, en cherchant un peu une des causes "habituelles" (même s'il faut chercher pour se taper un tel truc) est que le serveur ne trouve pas d'algorithme qu'il supporte dans la liste fournie par le "client hello" et FIN directement. Seulement ça n'arrive uniquement (j'imagine) quand on utilise un client SSL ou TLSv1 donc bon.
+Avant d'arriver à la vraie solution, en cherchant un peu une des causes « habituelles » (même s'il faut chercher pour se taper un tel truc) est que le serveur ne trouve pas d'algorithme qu'il supporte dans la liste fournie par le « client hello » et FIN directement. Seulement ça n'arrive uniquement (j'imagine) quand on utilise un client SSL ou TLSv1 donc bon.
 
 Le 21 décembre, vers 4h et demi du matin, je comprends enfin comment activer le mode de débug avec `ocaml-tls` !
 Grande nouvelle puisqu'à la première connection :

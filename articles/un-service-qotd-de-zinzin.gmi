@@ -49,13 +49,13 @@ Voici un schéma qui montre l'infrastructure que nous allons mettre en place :
  +-------------+     +---------------+
 ```
 
-Dans la figure ci-dessus, un serveur QOTD est synchronisé à un dépôt Git qui fait office de base de donnée et l'alimente en citations. Un second serveur joue le rôle de "miroir" Gemini et se connecte à intervalles réguliers au serveur QOTD afin de fournir un historique des citations proposées (sous-forme d'un flux RSS ou Atom). Ce dernier permettra également aux clients Gemini de proposer des citations qui seront ensuite intégrées à la base de citations.
+Dans la figure ci-dessus, un serveur QOTD est synchronisé à un dépôt Git qui fait office de base de donnée et l'alimente en citations. Un second serveur joue le rôle de « miroir » Gemini et se connecte à intervalles réguliers au serveur QOTD afin de fournir un historique des citations proposées (sous-forme d'un flux RSS ou Atom). Ce dernier permettra également aux clients Gemini de proposer des citations qui seront ensuite intégrées à la base de citations.
 
 ### Pourquoir un dépôt Git
 
 Utiliser un dépôt Git à la place d'une base de donnée plus traditionnelle évite de doter notre unikernel d'un filesystem. Cela permet également de conserver l'historique des changements en plus d'être facilement modifiable par un utilisateur extérieur à notre service.
 
-J'utilise ici un dépôt hébergé sur sourcehut pour des questions de simplicité mais il est bon à savoir qu'héberger un dépôt soi-même est parfaitement possible. Sourcehut étant construit entièrement avec des logiciels libres, c'est une dépendance que j'estime "saine". Si vous souhaitez héberger votre dépôt vous-même, des instructions sont disponibles ici :
+J'utilise ici un dépôt hébergé sur sourcehut pour des questions de simplicité mais il est bon à savoir qu'héberger un dépôt soi-même est parfaitement possible. Sourcehut étant construit entièrement avec des logiciels libres, c'est une dépendance que j'estime « saine ». Si vous souhaitez héberger votre dépôt vous-même, des instructions sont disponibles ici :
 
 => https://blog.osau.re/articles/smtp_1.html#the-primary-dns-server-with-git
 
@@ -63,7 +63,7 @@ J'utilise ici un dépôt hébergé sur sourcehut pour des questions de simplicit
 
 ## Guillemet
 
-Commençons par implémenter "Guillemet", notre serveur Quotes Of The Day.
+Commençons par implémenter « Guillemet », notre serveur Quotes Of The Day.
 
 ### Les citations
 
@@ -180,7 +180,7 @@ let listen_udp ~on_error ~port stack quote_of_the_day =
       | Error err -> on_error (`UDP err))
 ```
 
-Certains ont sûrement remarqué que je mélange opérateur monadique et opérateur de "binding". J'utilise les opérateurs quand je souhaite formater mon code de manière plus compacte et pour éviter d'introduire des variables intermédiaires insignifiantes (pour _pattern match_ directement sur une valeur par exemple). À l'inverse, je trouve que les opérateurs de binding ont l'avantage de mieux structurer le code.
+Certains ont sûrement remarqué que je mélange opérateur monadique et opérateur de _binding_. J'utilise les opérateurs quand je souhaite formater mon code de manière plus compacte et pour éviter d'introduire des variables intermédiaires insignifiantes (pour _pattern match_ directement sur une valeur par exemple). À l'inverse, je trouve que les opérateurs de binding ont l'avantage de mieux structurer le code.
 
 Enfin, il suffit de fournir à la fonction `run`, un port sur lequel écouter, une stack TCP/IP et un générateur de citation pour lancer le serveur :
 
@@ -195,7 +195,7 @@ let run ?(on_error = warn_err) ?(port = 17) stack qotd =
 
 Maintenant que notre serveur est en place, il ne reste plus qu'à envelopper le tout dans un unikernel.
 
-Afin qu'une citation inédite soit proposée chaque jour que Dieu fait, il est nécessaire d'avoir une structure de donnée s'apparentant à une file. Ainsi, chaque citation sera servie puis replacée à la fin de la file pour garantir qu'au moins une citation soit servie chaque jour ! On utilisera le module `Queue` de la librairie standard d'OCaml qui implémente exactement le comportement que l'on souhaite. On mémorisera également la date du jour pour savoir quand servir une nouvelle citation (ça fait vraiment ton d'énoncé d'exercice de prépa MP2I d'employer "on").
+Afin qu'une citation inédite soit proposée chaque jour que Dieu fait, il est nécessaire d'avoir une structure de donnée s'apparentant à une file. Ainsi, chaque citation sera servie puis replacée à la fin de la file pour garantir qu'au moins une citation soit servie chaque jour ! On utilisera le module `Queue` de la librairie standard d'OCaml qui implémente exactement le comportement que l'on souhaite. On mémorisera également la date du jour pour savoir quand servir une nouvelle citation (ça fait vraiment ton d'énoncé d'exercice de prépa MP2I d'employer « on »).
 
 => https://v2.ocaml.org/api/Queue.html
 
@@ -233,7 +233,7 @@ end
 
 Je dois avouer que la comparaison `t.today < now` est un peu bizarre mais c'est la solution la plus naturelle que j'ai trouvé.
 
-Il ne reste plus qu'à permettre à notre unikernel de se connecter à un dépôt Git distant pour récupérer la liste des citations et les ajouter à notre "quotes queue". Pour cela, nous allons définir une tâche de fond qui s'occupera de "pull" le dépôt toutes les 12 heures (un intervalle largement suffisant pour notre usage). En cas de modification ou de suppresion, il n'y qu'à filtrer la file :
+Il ne reste plus qu'à permettre à notre unikernel de se connecter à un dépôt Git distant pour récupérer la liste des citations et les ajouter à notre « quotes queue ». Pour cela, nous allons définir une tâche de fond qui s'occupera de « pull » le dépôt toutes les 12 heures (un intervalle largement suffisant pour notre usage). En cas de modification ou de suppresion, il n'y qu'à filtrer la file :
 
 ```ocaml
 let perform_changes store quotes changes =
@@ -329,7 +329,7 @@ Il est désormais tant de rajouter l'indispensable fichier `config.ml` afin de p
 * `ssh-key` : une seed permettant de générer une clef privée ;
 * `ssh-authentificator` : le hash de la clef publique associée à l'utilisateur qui détient le dépôt Git dans notre cas.
 
-Des instructions détaillées expliquant quoi fournir précisement sont disponibles ici dans la section "Configuration" :
+Des instructions détaillées expliquant quoi fournir précisement sont disponibles ici dans la section « Configuration » :
 => https://github.com/roburio/unipi/
 
 En cas de problème, n'hésitez pas à m'envoyer un mail ou vous adressez aux mainteneurs. Ils semblent être très réactifs !

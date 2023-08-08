@@ -24,7 +24,7 @@ Les seuls problèmes récurrents que je lui trouve est qu'elle souligne en rouge
 
 => /images/lsp-chiant.png Fuck off
 
-Il faut aussi parfois recharger l'extension pour qu'elle marche (ce qui se fait de façon très pratique avec VSCodium : Ctrl+Shift+P puis écrire "OCaml: Restart Language Server").
+Il faut aussi parfois recharger l'extension pour qu'elle marche (ce qui se fait de façon très pratique avec VSCodium : Ctrl+Shift+P puis écrire « OCaml: Restart Language Server »).
 
 => https://open-vsx.org/extension/ocamllabs/ocaml-platform
 => https://github.com/ocaml/ocaml-lsp
@@ -52,7 +52,7 @@ Beaucoup de néophytes sont mécontents du fait qu'Opam et Dune ne forment pas u
 
 ## Le formatteur de code
 
-Je me sers d'Ocamlformat configuré avec les réglages par défaut pour formater mon code (fuck les conventions horribles de Janestreet). Le rendu est correct dans l'immense majorité des cas et j'en suis très satisfait. Il n'est pas rare de tomber sur quelques bugs lorsqu'on utilise des fonctionnalités syntaxiques d'OCaml un peu "exotiques" (variants polymorphiques, objets ...) ce qui rend un fichier informatable mais les mainteneurs sont réactifs et les corrigent rapidement. Le seul bémol notable est le fait de devoir créer obligatoirement un fichier `.ocamlformat` à la racine de chaque projet pour formater automatiquement un document, ce qui rend les choses un peu laborieuses.
+Je me sers d'Ocamlformat configuré avec les réglages par défaut pour formater mon code (fuck les conventions horribles de Janestreet). Le rendu est correct dans l'immense majorité des cas et j'en suis très satisfait. Il n'est pas rare de tomber sur quelques bugs lorsqu'on utilise des fonctionnalités syntaxiques d'OCaml un peu « exotiques » (variants polymorphiques, objets ...) ce qui rend un fichier informatable mais les mainteneurs sont réactifs et les corrigent rapidement. Le seul bémol notable est le fait de devoir créer obligatoirement un fichier `.ocamlformat` à la racine de chaque projet pour formater automatiquement un document, ce qui rend les choses un peu laborieuses.
 
 => https://github.com/ocaml-ppx/ocamlformat
 

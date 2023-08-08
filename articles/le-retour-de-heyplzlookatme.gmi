@@ -54,7 +54,7 @@ J'ai profité de cette période productive pour régler quelques vieux bugs dans
 
 => /tags/bâton.gmi
 
-J'ai en outre réglé le support d'unicode dans les commentaires. Il y avait auparavant un problème d'encodage avec les caractères UTF-8 (encore eux) qui étaient remplacés par des "�" (en plus de faire planter Vicer lorsque l'un d'eux était présent dans un commentaire fraîchement posté).
+J'ai en outre réglé le support d'unicode dans les commentaires. Il y avait auparavant un problème d'encodage avec les caractères UTF-8 (encore eux) qui étaient remplacés par des « � »(en plus de faire planter Vicer lorsque l'un d'eux était présent dans un commentaire fraîchement posté).
 
 ## Il manque plus que le contenu
 
