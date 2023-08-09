@@ -31,7 +31,7 @@ Il est impossible de spécifier la sortie de piste autrement que par « availabl
 Quand deux avions sont bloqués (un fait son pushback l'autre roule) impossible de faire avancer l'un ou reculer l'autre, du coup on est complètement bloqué.
 => /images/taxiway.jpg Exemple typique
 
-En cas d'urgence, impossible d'indiquer un cap en degré à un avion, on peut uniquement indiquer un vecteur avant l'approche finale ou faire un go-around juste avant l'atterrissage, ce qui demande à l'avion de quand même approcher la piste (et donc game over vu que les deux avions vont se toucher) ; je sais pas si c'est très réaliste par contre. Normalement, j'imagine que ce genre de situation n'est pas censé se produire.
+En cas d'urgence, impossible d'indiquer un cap en degré à un avion, on peut uniquement indiquer un vecteur avant l'approche finale ou faire un go-around juste avant l'atterrissage, ce qui demande à l'avion de quand même approcher la piste (et donc game over vu que les deux avions vont se toucher) ; je sais pas si c'est très réaliste par contre. Normalement, j'imagine que ce genre de situation n'est pas censée se produire.
 => /images/goaround.jpg Exemple typique
 
 Il est également impossible d'indiquer une vitesse précise, on a pour seule option « reduce speed » qui réduit la vitesse à 180kts.
@@ -39,7 +39,7 @@ On ne peut pas connaître le plan de vol d'un avion avant son décollage, l'inve
 On ne peut pas non plus faire rentrer un avion au garage si on s'est trompé de piste après le pushback ; sur RJCC j'ai pas prévu le changement de piste et du coup un avion a dû partir sur la mauvaise, augmentant le « risque ».
 Il est aussi globalement impossible d'annuler rapidement une décision (ce qui serait possible dans la vraie vie) ; je ne pense pas que ça serait au détriment du gameplay puisque ça pourrait coûter des points en efficacité (ou risque).
 
-D'autres points ont été relevés sur la page discussion de team à propos notamment du manque de réalisme au niveau des avions militaires mais là j'y connais rien donc je vais rien dire dessus.
+D'autres points ont été relevés sur la page discussion sur Steam à propos notamment du manque de réalisme au niveau des avions militaires mais là j'y connais rien donc je vais rien dire dessus.
 
 ## ぼくは航空管制官5 ?
 
