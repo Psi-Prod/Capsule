@@ -1,9 +1,9 @@
 ---
-title: "Mehari 3.0"
+title: "Mehari 0.3"
 date: 2023-08-10
 authors:
   - Tim
-description: Nouvelle mise-à-jour
+description: La nouvelle mise-à-jour évènement
 tags:
 - devlog
 - ocaml
@@ -12,7 +12,7 @@ tags:
 
 Mehari 0.3 est sorti et aujourd'hui nous allons discuter de la prochaine version : Mehari 0.4 (nom de code: prostat lovers)
 
-Pour ceux qui ont cliqué pour la version 3.0, le changelog complet est disponible ci-dessous :
+Pour ceux qui ont cliqué pour la version 0.3, le changelog complet est disponible ci-dessous :
 
 => https://github.com/Psi-Prod/Mehari/releases/tag/0.3
 
