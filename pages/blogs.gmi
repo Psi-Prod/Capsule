@@ -15,24 +15,25 @@
 
 ## Sur le Geminispace
 
+=> gemini://gemini.cyberbot.space/
+=> gemini://gmi.bacardi55.io/
 => gemini://perso.pw/blog/
 => gemini://foo.zone/
-=> gemini://gemini.cyberbot.space/
-=> gemini://blog.kdx.re/
-=> gemini://gmi.bacardi55.io/
 
 ## Sur le Web
 
-### À propos d'OCaml
+### À propos d'OCaml (notamment)
 
 => https://blog.osau.re/
 => https://hannes.nqsb.io/
+=> https://xvw.lol/
 => https://xhtmlboi.github.io/
 => https://mirageos.org/blog
 => http://gallium.inria.fr/blog/
 
-### Autres
+### Très à propos
 
 => https://333333.icu/
+=> https://kdx.re/
 => https://fasterthanli.me/
 => https://www.journaldulapin.com/
