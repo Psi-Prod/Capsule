@@ -73,3 +73,5 @@ On corrigera ce problème un de ces quatre.
 ## La documentation…
 
 …est de nouveau en ligne après une longue absence dûe à notre flemme.
+
+=> https://docs.heyplzlookat.me/
