@@ -1,0 +1,77 @@
+---
+title: "Bons baisers de heyplzlookatme #2"
+date: 2023-09-04
+authors:
+  - Léo
+  - Tim
+tags:
+- bons-baisers
+---
+
+Si vous avez visité le site ces derniers jours, vous êtes sûrement tombé des nues en voyant l'horrible page 502 de Nginx vous empêchant de lire les articles dont vous étiez impatient de découvrir le contenu. Heureusement, vous êtes des bons qui nous lisez à l'origine sur Gemini, vous vous êtes rendu compte que seul le proxy HTTP était à plat et vous avez poursuivi votre lecture sur Gemini 🥸.
+
+=> /banners/maintenance-h24.png La panne n'est désormais qu'un lointain souvenir
+
+## Philosophie de la misère
+
+La F.A.Q du projet Gemini a reçu une mise à jour de la part de solderpunk qui s'est visiblement réveillé de son long sommeil. Elle est désormais beaucoup plus axée sur l'aspect culturel du projet et sa philosophie plutôt que sur la manière dont il est mis en œuvre techniquement.
+Fort bien, me diriez-vous. Nonobstant la spec' technique est toujours autant à chier et ambigüe sur plein de points, vous répondrai-je.
+
+=> gemini://gemini.circumlunar.space/docs/faq.gmi
+
+## Se mettre bleu
+
+Peut-être que vous l'avez d'ores et déjà remarqué mais le proxy HTTP bénéficie maintenant de coloration syntaxique pour tous les langages supportés par Hilite, à savoir OCaml et les fichiers dune, opam, shell et diff. Merci à l'effort de ce bon Patrick Ferris qui nous permet de retirer l'ignoble script Javascript de Google, d'autant plus qu'il ne comprenait rien à la syntaxe OCaml.
+
+=> https://github.com/patricoferris/hilite/ Hilite
+
+## Aussi sombres que nos cœurs
+
+Le style du site s'adapte maintenant au thème de votre ordinateur (sur Mac et Firefox c'est même synchronisé en temps réel) ! Un magnifique thème sombre pluvieux contrastant élégamment avec le ciel nuageux du thème clair s'acclimatera parfaitement à vos visites nocturnes du site.
+On comptait même tirer parti de la fonctionnalité « Feuille de style alternative » de Firefox pour que l'on puisse changer manuellement de thème sur les ordis équipés d'un vieil OS mais j'ai ragé et microbloggé dans la foulée :
+
+>Seigneur dieu c'est quoi l'intérêt des feuilles CSS alternatives (https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets) si c'est fetch par le navigateur même lorsqu'elles ne sont pas appliquées ? Fuck cette merde
+
+=> https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets
+
+## La seule véritable science
+
+=> /images/saine-lecture.png
+
+## Plions bagages
+
+On a changé de serveur et même d'architecture.
+Au lieu d'une petite VM x86 avec 1 cœur et 1Go de RAM, place au monstre ARM avec 4 cœurs et 24Go de RAM !
+Pourquoi ne pas avoir fait ça avant ? Tout simplement parce que je n'avais aucune idée que j'y avais droit avec l'option « Always free » d'Oracle. On ne paie donc toujours rien mis à part le nom de domaine.
+Si l'on veut, on aura toujours accès à deux petites machines x86 gratuitement.
+
+Quoi qu'il en soit, on va pouvoir redéployer le proxy et le serveur Gemini bien plus souvent puisqu'on peut enfin compiler directement là-bas. Ça m'évite donc de devoir demander à Tim de compiler chez lui (il est sur Linux, pas moi, et on a la flemme de crosscompiler).
+
+On a d'ailleurs trouvé un bug dans Mehari en configurant les certificats TLS pour le nouveau serveur . En effet, on interprète littéralement les _wildcard_ en faisant une simple comparaison :
+
+```ocaml
+let check_host uri epoch =
+  match Uri.host uri with
+  | None -> Error MissingHost
+  | Some h -> (
+      let hostnames = ... in
+      (* Égalité stricte au lieu de parser le nom de domaine *)
+      match Seq.find (String.equal h) hostnames with
+      | None -> Error WrongHost
+      | Some _ -> Ok ())
+```
+=> https://github.com/Psi-Prod/Mehari/blob/f78102e89a78b0d71524b194ba0857efecdbddfd/mehari/protocol.ml#L60
+
+Ainsi, configurer son certificat avec `*.heyplzlookat.me` en tant qu'_hostname_ et demander `new.heyplzlookat.me` renverra :
+
+```
+43 URL contains a foreign hostname
+```
+
+On corrigera ce problème un de ces quatre.
+
+## La documentation…
+
+…est de nouveau en ligne après une longue absence dûe à notre flemme.
+
+=> https://docs.heyplzlookat.me/

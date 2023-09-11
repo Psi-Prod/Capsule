@@ -37,9 +37,9 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O__________
 
 ## Contactez-nous
 
-=> mailto:tim.arnouts@proton.me
-=> mailto:lelolartichaut@laposte.net
-=> mailto:programind.bot@gmail.com
+=> mailto:tim.arnouts@proton.me tim.arnouts@proton.me
+=> mailto:lelolartichaut@laposte.net lelolartichaut@laposte.net
+=> mailto:programind.bot@gmail.com programind.bot@gmail.com
 
 (\__/)
 (='.'=)
