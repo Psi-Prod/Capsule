@@ -3,7 +3,7 @@ title: _LA_ méthode pour S'ÉMANCIPER par le SAVOIR
 date: 2023-09-11
 authors:
   - Léo
-description: Ce guide m'a fait arrêté d'être un petit con
+description: Ce guide m'a fait arrêter d'être un petit con
 tags:
 - guide
 - petit con
@@ -23,7 +23,7 @@ Pour Spinoza Baruch (mort depuis un bout de temps) nous sommes déterminés par 
 
 ## Guide [OFFICIEL]
 
-Premièrement, cela passe non pas uniquement par des connaissances techniques (et par technique je n'entends pas que la science, mais aussi la métaphysique et la philosophie en général) mais aussi par une façon de se penser soi et le monde qui nous entoure. Je n'ai pas encore trouvé de terme adapté donc je vais juste appeler ça "l'intelligence". Ça n'a pas beaucoup de sens mais faites le rapprochement avec mon gars Baruch.
+Premièrement, cela passe non pas uniquement par des connaissances techniques (et par technique je n'entends pas que la science, mais aussi la métaphysique et la philosophie en général) mais aussi par une façon de penser soi et le monde qui nous entoure. Je n'ai pas encore trouvé de terme adapté donc je vais juste appeler ça "l'intelligence". Ça n'a pas beaucoup de sens mais faites le rapprochement avec mon gars Baruch.
 Une personne ayant énormément de connaissance peut tout à fait être un sombre abruti malgré tout. Je peux vous donner l'exemple de mon professeur en amphithéâtre d'UNIX et C : détenteur d'un doctorat en intelligence artificielle, il est apparemment en crise de la quarantaine et s'est trouvé comme nouvelle passion l'écologie. Super bravo, très fort ! Malheureusement, un manque criant d'esprit critique et de tenue le pousse à croire qu'il a tout compris et que si on suivait SON plan de réforme du monde on ne mourrait pas tous du réchauffement climatique. Il a le même avis sur d'autres sujets, toujours avec la même rhétorique et morale d'esclave. Triste !
 Plutôt que d'adopter une critique structurelle et politique de son sujet, il préfère s'embourber dans une logique néolibérale de la responsabilité individuelle.
 Qu'est-ce qui pourrait expliquer ça, alors qu'il est censé être une personne adulte particulièrement douée et raisonnable ?
@@ -58,7 +58,7 @@ Que faire si par malheur vous n'avez pas su résister ?
 Relisez la règle numéro 2 : en tombant sur un discours plus précis, vous saurez le reconnaître comme tel et vous améliorer.
 Si ce discours n'est pas encore disponible, pas de panique, puisque vous ne savez pas encore si votre connaissance actuelle est abrutie ou pas ! Vous le saurez au moment opportun.
 
-À l'inverse d'un certain crétin pour qui lire est preuve de branlette intellectuelle et pour qui je cite
+À l'inverse d'un certain crétin pour qui lire est preuve de branlette intellectuelle et pour qui je cite :
 > moi je trouve que ça fait pitié de parler toujours en se cachant derrière des auteurs, sans jamais dire quelque chose de propre à soi
 > comme si les autres avaient mieux la capacité de réfléchir que toi
 Les autres ont autant de capacité cognitive que vous (même si soucis physiques ! à mon humble avis). Seulement il est stupide de croire que cette chose "propre à soi" l'est. Tout ce qui nous est appris nous ne l'avons pas inventé, la seule différence entre une personne qui n'a pas appris et une qui sait est que le discours de la première sera creux : des lieux communs que tout le monde a déjà traité.
