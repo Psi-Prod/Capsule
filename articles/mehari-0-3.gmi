@@ -10,7 +10,7 @@ tags:
 - mehari
 ---
 
-Mehari 0.3 est sorti et aujourd'hui nous allons discuter de la prochaine version : Mehari 0.4 (nom de code: prostat lovers)
+Mehari 0.3 est sorti et aujourd'hui nous allons discuter de la prochaine version : Mehari 0.4 (nom de code: prostate lovers)
 
 Pour ceux qui ont cliqué pour la version 0.3, le changelog complet est disponible ci-dessous :
 
