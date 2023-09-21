@@ -13,7 +13,7 @@ let articles_to_items articles =
 let tim =
   Syndic.Atom.author
     ~uri:(Uri.of_string "tim-ats-d.srht.site/")
-    ~email:"tim.arnouts@protonmail" "Tim"
+    ~email:"tim.arnouts@protonmail.me" "Tim"
 
 let leo = Syndic.Atom.author ~email:"lelolartichaut@laposte.net" "Léo"
 
