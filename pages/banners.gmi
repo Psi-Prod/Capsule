@@ -1,10 +1,10 @@
 # Bannières
 
-=> /banners/fete-de-lhuma Fête de l'Huma 2k23
-=> /banners/proxy.png Proxy 2.0 out maintenant
+=> /banners/fete-de-lhuma.png Fête de l'Huma 2k23
 => /banners/maintenance-h24.png Maintenance h24
 => /banners/d&r.png Fan club de D&R
 => /banners/leo-et-tim.png Léo et Tim
+=> /banners/proxy.png Proxy 2.0 out maintenant
 => /banners/xavier.png Le chameau attitré de Xavier
 => /banners/shinji.png Shinji
 => /banners/alien.png Alien
@@ -16,5 +16,6 @@
 => /banners/presentation.png Présentation
 => /banners/happi.png Happi
 => /banners/fesserie.png Fesserie
+=> /banners/minitel.png Minitel
 => /banners/lemonde.png Le Monde
 => /banners/computer.png Computer
