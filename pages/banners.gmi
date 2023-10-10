@@ -1,5 +1,7 @@
 # Bannières
 
+=> /banners/fete-de-lhuma Fête de l'Huma 2k23
+=> /banners/proxy.png Proxy 2.0 out maintenant
 => /banners/maintenance-h24.png Maintenance h24
 => /banners/d&r.png Fan club de D&R
 => /banners/leo-et-tim.png Léo et Tim
