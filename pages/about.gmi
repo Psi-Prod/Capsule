@@ -1,3 +1,0 @@
-# About Heyplzlookat.me
-
-> Welcome to our blog! We are Tim and Leo, and we post disastrous political opinions and commentaries, OCaml devlogs and other stuff that interests us directly and indirectly (in french).

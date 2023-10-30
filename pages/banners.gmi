@@ -1,5 +1,6 @@
 # Bannières
 
+=> /banners/bande.png La bande à Goyot
 => /banners/fete-de-lhuma.png Fête de l'Huma 2k23
 => /banners/maintenance-h24.png Maintenance h24
 => /banners/d&r.png Fan club de D&R

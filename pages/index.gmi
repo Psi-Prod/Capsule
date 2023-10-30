@@ -22,18 +22,15 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O__________
 => /gemlog.gmi 📝 Articles
 => /software.gmi 💻 Logiciels
 => /banners.gmi 🖼️ Bannières
-=> /about.gmi ☕ About (in english)
 
 => /misc.gmi 🗑 Misc
 => /garden.gmi 🌳 Jardin
-=> /relay.gmi 📑 Articles cools
 => /blogs.gmi 📚 Les blogs que nous lisons
 
 ## Autres liens
 
 => https://github.com/Psi-Prod Notre Github
 => https://docs.heyplzlookat.me Documentation de nos logiciels
-=> https://ib.heyplzlookat.me Notre imageboard
 
 ## Contactez-nous
 
