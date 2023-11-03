@@ -8,11 +8,11 @@ tags:
   - névrose
 ---
 
-À l'origine, j'étais comme tout le monde, je cherchais à simplifier au maximum mon workflow et j'en suis venu sans trop réfléchir à opter pour un convertisseur Markdown → HTML. Cette période est désormais révolue. Je trouve qu'il y a un certain plaisir à naviguer dans la doc' en ligne de Mozilla à la recherche de la balise parfaitement adaptée à chaque situation.
+À l'origine, j'étais comme tout le monde, je cherchais à simplifier au maximum mon workflow et j'en suis venu sans trop réfléchir à opter pour un convertisseur Markdown → HTML. Cette période est désormais révolue et je prends un certain plaisir à naviguer dans la doc' en ligne de Mozilla à la recherche de la balise parfaitement adaptée à chaque situation.
 
-> Oui mais Condor les deux approches sont conciliables. On peut écrire du HTML _inliné_ dans du Markdown !
+> Oui mais Condor HTML et Markdown ne sont pas antinomiques. Ces deux approches sont conciliables, on peut écrire du HTML _inliné_ dans du Markdown !
 
-🆗🆒 mais pourquoi rajouter une _build-step_ en plus pour générer les 3 pauvres balises <h1> de vos articles de minable. Sérieux, le HTML est largement autosuffisant et il y a littéralement une trentaine de cas où le balise fermante <p> peut être omise.
+🆗🆒 mais pourquoi rajouter une _build-step_ en plus pour générer les 3 pauvres balises <h1> de vos articles de minable. Soyons sérieux, le HTML est largement autosuffisant et assez peu verbeux dans ses moutures modernes. Il y a littéralement une trentaine de cas où le balise fermante <p> peut être omise.
 
 => https://html.spec.whatwg.org/multipage/syntax.html#optional-tags
 
@@ -74,7 +74,7 @@ qui est équivalent en HTML à :
 On remarque plusieurs problèmes :
 * Personne ne comprend rien ;
 * Mort de la sémantique ;
-* Les gens comprennent seulement grâce au rendu : Markdown devient une sorte de CSS light ;
+* Les gens comprennent uniquement grâce au rendu : Markdown devient une sorte de CSS light ;
 * T'es hors sujet avec tes balises éparpillées gros.
 
 Observez plutôt :
@@ -133,7 +133,7 @@ La majorité des lib' produiront un code HTML équivalent à :
 Ce qui est, je vous le donne en mille, du HTML malformé, avec tous les problèmes en matière de composabilité que cela engendre, ℯℊ corrompre le rendu d'un lecteur RSS qui comptait sur votre rigueur pour faire son job correctement.
 
 On pourra toujours objecter :
-> Oui mais Condor c'est pas des problèmes lié au Markdown en soi, c'est juste les librairies que tu utilises qui sont à chier
+> Oui mais Condor ce ne sont pas des problèmes liés au Markdown en soi, c'est juste les librairies que tu utilises qui sont à chier.
 
 🆗🆒 bah faites-mieux alors.
 
@@ -141,21 +141,21 @@ On pourra toujours objecter :
 
 Utiliser Markdown ? Ok mais quelle version ? Le « vanilla » tel que penser par feu Aaron Swartz ? Le GitHub flavored ? Celui qui permet de générer une table des matières automatiquement mais pas d'écrire des tableaux ?
 
-Vous comprenez le point où je veux en venir : c'est insupportable. Certes CommonMark se veut être une solution mais il arrive un peu après la guerre car sorti initialement la même année que HTML5.
+Vous comprenez où je veux en venir : cette jungle est insupportable. Certes CommonMark se veut être une solution mais il arrive un peu après la guerre car sorti initialement en 2014 (c'est-à-dire la même année que HTML5 et plus de 10 ans après Markdown).
 
 => https://daringfireball.net/projects/markdown/syntax
 => https://commonmark.org/
 
 ## Études de problématiques sous-jacentes
 
-* C'est super chiant à parser Markdown putain. En comparaison, HTML est quasiment du XML. On sait faire depuis 25 ans ;
+* C'est super chiant à parser Markdown putain. En comparaison, HTML est quasiment du XML. On sait le parser depuis 25 ans ;
 * Du fait des raisons énumérées plus haut, Markdown pour l'accesibilité c'est à chier.
 
 ## Conclusion
 
 Écrivez du HTML, vous éviterez de vous tirer une balle dans le pied. Continuez d'utiliser Markdown pour vos readme niais de projet à 2 stars mais pas pour cibler un rendu HTML.
 
-S'il vous plaît de grâce, arrangez-vous pour que votre HTML soit valide, par exemple en utilisant le vérificateur du W3C et laissez-vous bercer par cet agréable écran :
+Tant qu'à faire, s'il vous plaît de grâce, arrangez-vous pour que votre HTML soit valide, par exemple en utilisant le vérificateur en ligne du W3C et laissez-vous bercer par cet agréable écran :
 
 => /images/douce-vie.jpg La vie est douce, c'est une sieste dans la soie
 
