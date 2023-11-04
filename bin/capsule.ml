@@ -9,6 +9,7 @@ let program ~target =
   let* () = Task.move_audio target in
   let* () = Task.move_video target in
   let* () = Task.move_index target in
+  let* () = Task.move_static_pages target in
   let* () = Task.process_articles target in
   let* () = Task.process_pages target in
   let* () = Task.generate_gemlog target in

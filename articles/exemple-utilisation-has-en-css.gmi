@@ -1,0 +1,98 @@
+---
+title: Un exemple d'utilisation de :has en CSS
+date: 2023-11-04
+authors:
+  - Tim
+tags:
+- web
+- css
+---
+
+Le nouveau sélecteur `:has` rend CSS encore plus déclaratif et débloque plein de situations où Javascript était autrefois nécessaire. Aujourd'hui, on va exposer une petite démonstration de son utilité en encapsulant un blog avec plusieurs pages en un seul et même document HTML.
+
+## La solution classique
+
+La manière la plus évidente de procéder est de décrire une simple barre de navigation contenant des liens vers d'autres pages :
+
+```html
+<nav>
+  <a href="/">home</a>
+  <a href="/texts.html">texts</a>
+  <a href="/about.html">about</a>
+</nav>
+```
+
+## La solution Gucci Prada Web5
+
+L'idée est de combiner la puissance de `:has` et de la pseudo-classe `:target` pour styliser uniquement les sections ciblées dans l'URL.
+
+=> https://developer.mozilla.org/fr/docs/Web/CSS/:target
+=> https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+
+Commençons par notre HTML :
+
+```html
+<header>
+    <h1>My blog</h1>
+
+    <nav>
+        <a href="#">home</a>
+        <a href="#texts">texts</a>
+        <a href="#about">about</a>
+    </nav>
+</header>
+
+<main>
+    <section id="#" class="home">
+        <h2>Home</h2>
+
+        …
+    </section>
+
+    <section id="texts">
+        <h2>Texts</h2>
+
+        …
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+
+        …
+    </section>
+</main>
+```
+
+Puis notre CSS :
+
+```css
+/* On rend invisible toutes les sections à l'exception de "home" qui est la section affichée par défaut. */
+main>section:not(.home) {
+  display: none;
+}
+
+/* On rend invisible "home" quand cette section n'est pas ciblée. */
+main:has(section:target):not(.home)>.home {
+  display: none;
+}
+
+/* On rend visible la section ciblée. */
+main:has(section:target)>section:target {
+  display: unset;
+}
+```
+
+J'ai mis en ligne l'exemple complet si vous voulez observer l'évolution du CSS dans l'inspecteur de votre navigateur :
+=> /static-pages/has-demo.html
+
+Utilisateurs de Firefox attention ⚠️, pour que `:has` fonctionne, il est nécessaire d'activer l'option « layout.css.has-selector.enabled » dans about:config. Elle devrait être activée par défaut dans les prochaines versions (à partir du 19 décembre 2023 visiblement).
+
+=> https://groups.google.com/a/mozilla.org/g/dev-platform/c/oacuvZ2_hLg/m/4o28pFLkAwAJ Intent to Ship: :has Selector
+
+### Pourquoi ?
+
+Aucune idée. Même si ça a quelques avantages :
+* pas besoin d'utiliser un générateur de site statique ;
+* c'est plus rapide : on télécharge une seule page.
+
+Le seul écueil est peut-être de devoir disposer d'un navigateur moderne supportant `:has`.

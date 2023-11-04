@@ -6,6 +6,7 @@ let banners_target target = into target "banners"
 let images_target target = into target "images"
 let audio_target target = into target "audio"
 let video_target target = into target "video"
+let static_pages_target target = into target "static-pages"
 let template file = add_extension file "gmi" |> into "templates"
 let article_template = template "article"
 let layout_template = template "layout"
@@ -37,6 +38,10 @@ let move_video target =
 
 let move_index target =
   process_files [ "pages" ] File.is_index (Build.copy_file ~into:target)
+
+let move_static_pages target =
+  process_files [ "pages/static" ] Preface.Predicate.tautology
+    (Build.copy_file ~into:(static_pages_target target))
 
 let process_pages target =
   process_files [ "pages" ]

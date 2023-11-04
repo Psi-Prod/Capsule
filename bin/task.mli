@@ -3,6 +3,7 @@ val move_images : string -> unit Yocaml.Effect.t
 val move_audio : string -> unit Yocaml.Effect.t
 val move_video : string -> unit Yocaml.Effect.t
 val move_index : string -> unit Yocaml.Effect.t
+val move_static_pages : string -> unit Yocaml.Effect.t
 val process_pages : string -> unit Yocaml.Effect.t
 val process_articles : string -> unit Yocaml.Effect.t
 val generate_gemlog : string -> unit Yocaml.Effect.t

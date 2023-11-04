@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My blog</title>
+
+    <style>
+        main>section:not(.home) {
+            display: none;
+        }
+
+        main:has(>section:target):not(.home)>.home {
+            display: none;
+        }
+
+        main:has(>section:target)>section:target {
+            display: unset;
+        }
+    </style>
+
+<body>
+    <header>
+        <h1>My blog</h1>
+
+        <nav>
+            <a href="#">home</a>
+            <a href="#texts">texts</a>
+            <a href="#about">about</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="#" class="home">
+            <h2>Home</h2>
+
+            <p>Welcome to my blog!
+        </section>
+
+        <section id="texts">
+            <h2>Texts</h2>
+
+            <p>Here leave my texts :
+            <ul>
+                <li>…
+                <li>…
+            </ul>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+
+            <p>Fuck all this shit
+        </section>
+    </main>
