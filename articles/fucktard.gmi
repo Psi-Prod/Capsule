@@ -6,7 +6,7 @@ authors:
 description: Ce guide m'a fait arrêter d'être un petit con
 tags:
 - guide
-- petit con
+- petit-con
 ---
 
 ## Avant-propos

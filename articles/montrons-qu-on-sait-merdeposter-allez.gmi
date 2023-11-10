@@ -5,6 +5,7 @@ authors:
   - Renifleur de poudre
 tags:
 - merdier
+- profane
 ---
 
 Mastodon qu'est-ce qui se putain de passe dans cette entreprise ?
