@@ -1,0 +1,20 @@
+---
+title: "Internet : un état des lieus"
+date: 2023-11-10
+authors:
+  - Tim
+description: Perspectives autours d'un internet communiste
+tags:
+  - internet
+  - essai
+---
+
+En entamant une réflexion sur ce à quoi pourrait ressembler un Internet communiste, j'ai naturellement été amené à penser les conditions matérielles de sa création et de son développement. À savoir, un contexte global d'accélération du capitalisme nécessitant d'entretenir un flux d'information toujours plus massif en vue de conquérir de nouveaux marchés. Cet ordre des choses se vérifie immédiatement en constatant l'état majoritaire d'internet. Il suffit de visiter n'importe quel site marchand pour s'en convaincre. Cet ordre des choses qui règne sur Internet peut cependant être remis en cause, c'est en cela finalement que le processus dialectique consiste. En postulant la neutralité de la technique comme le fait la tradition marxiste-léniniste moderne, un renversement de la raison d'être d'Internet est possible. En considérant la science autrement qu'en tant que potentialité productive autonome, c'est-à-dire en tant qu'outils, on entrevoit une science émancipatrice au service non plus du capital, mais du travail. En témoigne les projets d'éducation collective comme Wikipédia qui se détourne de la logique capitaliste.
+
+De la même façon que le capitalisme forge une conscience de classe au prolétariat, la conscience de classe des utilisateurs d'Internet croît et avec elle toujours plus la potentialité de son renversement, voire même de son dépassement. La seule réappropriation d'Internet par les travailleurs ne suffit pas pour opérer un dépassement de la dépossession de soi induite par la logique capitaliste. En effet, il ne faut pas voir Internet comme une parcelle de terre tantôt aux mains de capitalistes, tantôt aux mains de communistes, mais plutôt remarquer qu'Internet fait partie d'une entreprise plus globale en tant qu'il organise l'ultime séparation entre le virtuel et la vie. Tout se passe comme si les moments réellement vécus étaient cristallisés dans cet océan de représentation que constitue Internet. Cette autonomisation de la représentation étant particulièrement flagrante sur les réseaux sociaux où elle devient totalisante.
+
+Reste-t-il alors une place pour une tendance au jeu lorsqu'on arrive à s'arracher à cette représentation permanente étouffante ? La structure d'Internet, semblable à un immense labyrinthe en expansion de par sa capacité infinie à générer du contenu, y semble propice. En étant l'objet technique qui « toujours se nie », son aspect foncièrement éphémère est d'autant plus appréciable lorsqu'on en est conscient. Il m'est arrivé de ressentir une certaine ivresse en tombant sur ces sites personnels isolés, comme un tas d'îlots d'humanités essayant désespérément d'établir un rapport humain authentique.
+
+Le mérite d'Internet aura été de laisser entrevoir ce à quoi pourrait ressembler une existence passionnante, au moins durant une phase révolutionnaire transitoire.
+
+=> https://fediverse.blog/~/BricBrac/L%E2%80%99enfer%20du%20dating/ Un article qui m'a inspiré
