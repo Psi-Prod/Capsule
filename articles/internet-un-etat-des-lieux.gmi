@@ -1,5 +1,5 @@
 ---
-title: "Internet : un état des lieus"
+title: "Internet : un état des lieux"
 date: 2023-11-10
 authors:
   - Tim
