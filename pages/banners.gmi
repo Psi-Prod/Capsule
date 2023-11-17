@@ -1,5 +1,7 @@
 # Bannières
 
+=> /banners/debat-intense.png Débat intense
+=> /banners/mer-au-jourdain.png De la mer au Jourdain
 => /banners/bande.png La bande à Goyot
 => /banners/fete-de-lhuma.png Fête de l'Huma 2k23
 => /banners/maintenance-h24.png Maintenance h24
