@@ -1,5 +1,6 @@
 # Bannières
 
+=> /banners/ayanami-crous.png Ayanami x Crous
 => /banners/debat-intense.png Débat intense
 => /banners/mer-au-jourdain.png De la mer au Jourdain
 => /banners/bande.png La bande à Goyot
