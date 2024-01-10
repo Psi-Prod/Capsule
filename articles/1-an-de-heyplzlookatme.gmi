@@ -1,0 +1,45 @@
+---
+title: 1 an de heyplzlookatme
+date: 2024-01-10
+authors:
+  - Léo
+  - Tim
+tags:
+  - meta
+  - bilan
+---
+
+Ça fait maintenant un an que heyplzlookatme est en ligne ! L'année dernière, aux alentours du 25 novembre, nous publions notre premier article, discutons un peu de ce qu'on a fait depuis.
+
+⚠️ Cet article aurait dû sortir en novembre si Léo n'avait pas eu la flemme de finir d'écrire et Tim de le publier.
+
+=> /banners/1an.webp
+
+## Des chiffres
+
+On a publié 28 articles en tout cette année.
+
+* 7 articles concernant OCaml au sens large (nos projets (Mehari, Proximite), MirageOS et l'écosystème) ;
+* Environ 4 articles désastreux traitant de philosophie/politique au sens large (de lourds projets arrivent) ;
+* 4 billets aléatoires inclassables.
+* Et plus de 5 articles meta ! Comme quoi l'introspection est un sujet de prédilection ici.
+
+Ces quelques métriques viennent confirmer la triforce qu'on souhaitait insuffler au blog à l'origine, à savoir : OCaml, de la politique, et d'autres trucs qui nous correspondent. Tout cela en français (mort à l'impérialisme américain).
+
+On est content d'avoir fait d'heyplzlookatme un espèce de fourre-tout où on peut librement et spontanément publier, à l'image de ce qu'on préfère lire nous-mêmes sur le Web en fin de compte.
+
+On a pu parler de politique, sujet sur lequel on ne se risquait pas par peur de dire des singeries au début. Maintenant qu'on a mis un peu les choses au clair pour nous-mêmes, on s'en fout un peu d'avoir tort. Attention aux opinions à chier qui pourrait déferler sur le blog courant 2024 donc.
+
+=> /images/foufou.png Fuck la pureté militante, je dis de la merde de façon décomplexée sur le geminispace
+
+## Avenir du site
+
+On a pas prévu de s'arrêter en si bon chemin !
+Le projet principal a déjà été traîté en article : la radio HeyPlzLookAtMe!
+Si on se bouge un peu les fesses et qu'on trouve un créneau pour faire un premier jet, on devrait pouvoir commencer début 2024, on espère.
+
+La rencontre avec les pelos du site controlistes.fr ouvre aussi de nouvelles portes, je crois que Tim et potence (namefag sur ctrlist) ont prévu de faire des trucs en ligne tah les forums, truc qu'on a pour l'instant abandonné de notre côté parce que flemme.
+
+On a encore d'autres petits projets pour continuer à agrandir le site mais on en parlera plus tard.
+
+À bientôt sur les interbutts :DD

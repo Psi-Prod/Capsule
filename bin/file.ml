@@ -5,7 +5,7 @@ let is_gemtext = with_extension "gmi"
 
 let is_image =
   with_extension "png" || with_extension "svg" || with_extension "jpg"
-  || with_extension "jpeg" || with_extension "gif"
+  || with_extension "jpeg" || with_extension "gif" || with_extension "webp"
 
 let is_audio =
   with_extension "wav" || with_extension "mp3" || with_extension "ogg"
