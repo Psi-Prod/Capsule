@@ -1,5 +1,7 @@
 # Bannières
 
+=> /banners/reunion.png Réunion
+=> /banners/1an.png 1er anniversaire d'heyplzlookatme
 => /banners/ayanami-crous.png Ayanami x Crous
 => /banners/debat-intense.png Débat intense
 => /banners/mer-au-jourdain.png De la mer au Jourdain
@@ -8,6 +10,7 @@
 => /banners/maintenance-h24.png Maintenance h24
 => /banners/d&r.png Fan club de D&R
 => /banners/leo-et-tim.png Léo et Tim
+=> /banners/personnebon.png Personne bon
 => /banners/proxy.png Proxy 2.0 out maintenant
 => /banners/xavier.png Le chameau attitré de Xavier
 => /banners/shinji.png Shinji
