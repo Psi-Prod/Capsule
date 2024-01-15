@@ -52,13 +52,12 @@ module Article = struct
     let categories =
       List.map
         (fun tag ->
-          let scheme =
-            Printf.sprintf "heyplzlookat.me/tag/%s" tag |> Uri.of_string
-          in
+          let scheme = Uri.with_path url ("/tags/" ^ tag ^ ".gmi") in
           Syndic.Atom.category tag ~scheme)
         article.tags
     in
-    Syndic.Atom.entry ~title:(Text article.title) ~id:(Uri.of_string url)
+    Syndic.Atom.entry ~title:(Text article.title) ~id:(Uri.path_and_query url |> Uri.of_string)
+      ~links:[ Syndic.Atom.link url ~rel:Self ]
       ~published
       ~updated:(Option.fold ~none:published ~some:ptime_of_date article.updated)
       ?summary ~categories ~authors ()
