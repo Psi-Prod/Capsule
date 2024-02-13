@@ -1,13 +1,13 @@
 open Yocaml
 
-let domain = "heyplzlookat.me"
+let domain = "https://heyplzlookat.me"
 let feed_url = into domain "atom.xml"
 let icon_url = into domain "images/icon.png" |> Uri.of_string
 
 let articles_to_items articles =
   List.map
     (fun (article, url) ->
-      Model.Article.to_atom_entry (into domain url) article)
+      Model.Article.to_atom_entry (Uri.of_string (into domain url)) article)
     articles
 
 let tim =
@@ -33,7 +33,7 @@ let make ((), articles) =
           devlog OCaml et d'autres trucs qui nous intéressent de près ou de \
           loin")
     ~id:(Uri.of_string feed_url) ~authors:[ leo; tim ] ~updated
-    ~links:[ Syndic.Atom.link ~hreflang:"fr" (Uri.of_string domain) ]
+    ~links:[ Syndic.Atom.link ~hreflang:"fr" (Uri.of_string domain) ~rel:Self ]
     ~icon:icon_url
     (articles_to_items articles)
 
