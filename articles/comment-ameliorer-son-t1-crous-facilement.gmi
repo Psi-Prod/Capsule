@@ -10,28 +10,28 @@ tags:
 - dialectique
 ---
 
-Et oui c'est possible grâce à l'art noble du feng shui ! Non ce n'est pas réservé aux femmes blanches d'un certain âge. J'ai trouvé Cliff Tan sur YouTube, un architecte singapourien / designer d'intérieur qui fait des vidéos marrantes sur comment réarranger et rénover des espaces de vie pour qu'ils soient plus agréables à vivre.
+Et oui c’est possible grâce à l’art noble du feng shui ! Non ce n’est pas réservé aux femmes blanches d’un certain âge. J’ai trouvé Cliff Tan sur YouTube, un architecte singapourien / designer d’intérieur qui fait des vidéos marrantes sur comment réarranger et rénover des espaces de vie pour qu’ils soient plus agréables à vivre.
 => https://www.youtube.com/channel/UCL9Y2MYhBUT0rgOi1q6JeCQ Dear Modern
-J'aimerais bien acheter son bouquin quand j'aurai suffisamment d'argent.
+J’aimerais bien acheter son bouquin quand j’aurai suffisamment d’argent.
 
-J'ai continué à regarder ses vidéos jusqu'à ce que ça me donne envie de réarranger mon appart à moi aussi.
+J’ai continué à regarder ses vidéos jusqu’à ce que ça me donne envie de réarranger mon appart à moi aussi.
 
 ## Pour un feng shui matérialiste-dialectique
 
-Il y a autre chose qui m'a intrigué dans le feng shui (ou en tout cas le sien, j'imagine qu'il y a plusieurs manières d'aborder le sujet), c'est son approche plutôt mystique (je ne sais pas comment dire ça mieux) d'une réalité très concrète : par exemple, l'analyse du « qi » (flux d'énergie) fait tout de suite penser aux fluides (le nom même du truc c'est vent et eau), on regarde les chemins les plus empruntés et on arrange la pièce en fonction de ça ; aussi, l'approche dialectique (plus ou moins) pour la résolution des contradictions au sein de l'espace qu'on souhaite arranger. Un exemple typique, c'est simplement le yin et le yang :
+Il y a autre chose qui m’a intrigué dans le feng shui (ou en tout cas le sien, j’imagine qu’il y a plusieurs manières d’aborder le sujet), c’est son approche plutôt mystique (je ne sais pas comment dire ça mieux) d’une réalité très concrète : par exemple, l’analyse du « qi » (flux d’énergie) fait tout de suite penser aux fluides (le nom même du truc c’est vent et eau), on regarde les chemins les plus empruntés et on arrange la pièce en fonction de ça ; aussi, l’approche dialectique (plus ou moins) pour la résolution des contradictions au sein de l’espace qu’on souhaite arranger. Un exemple typique, c’est simplement le yin et le yang :
 > Yin and yang are the everyday opposites you see in your home and office: soft and hard, cold and hot, dark and light. Yin and yang exist in nature, in buildings, and in individual rooms. According to Feng Shui principles, it is the appropriate interaction of these two forces that creates harmony around you.
 => https://fengshuiforreallife.com/Detailed/214.html#:~:text=Yin%20and%20yang%20are%20the,that%20creates%20harmony%20around%20you.
-Cela rappelle évidemment Mao Zedong dans 'De la contradiction' :
-> Contrairement à la conception métaphysique du monde, la conception matérialiste-dialectique veut que l'on parte, dans l'étude du développement d'une chose ou d'un phénomène, de son contenu interne, de ses relations avec d'autres choses ou d'autres phénomènes, c'est-à-dire que l'on considère le développement des choses ou des phénomènes comme leur mouvement propre, nécessaire, interne, chaque chose, chaque phénomène étant d'ailleurs, dans son mouvement, en liaison et en interaction avec les autres choses, les autres phénomènes qui l'environnent.
-Il y avait beaucoup de passages sûrement plus pertinents que celui-ci mais il m'a paru bien illustrer mon propos.
-Cela m'a également rappelé un autre ouvrage (cette fois-ci d'architecture) mais je garde ça pour un prochain article.
-Ici l'idée n'est pas d'avancer que le feng shui serait formellement dialectique (encore moins matérialiste) mais de voir qu'on peut facilement tisser des liens entre tout ça. Même Mao a trouvé des choses intéressantes dans la discipline (malgré sa future interdiction par les cocos chinois de l'époque) !
+Cela rappelle évidemment Mao Zedong dans « De la contradiction » :
+> Contrairement à la conception métaphysique du monde, la conception matérialiste-dialectique veut que l’on parte, dans l’étude du développement d’une chose ou d’un phénomène, de son contenu interne, de ses relations avec d’autres choses ou d’autres phénomènes, c’est-à-dire que l’on considère le développement des choses ou des phénomènes comme leur mouvement propre, nécessaire, interne, chaque chose, chaque phénomène étant d’ailleurs, dans son mouvement, en liaison et en interaction avec les autres choses, les autres phénomènes qui l’environnent.
+Il y avait beaucoup de passages sûrement plus pertinents que celui-ci mais il m’a paru bien illustrer mon propos.
+Cela m’a également rappelé un autre ouvrage (cette fois-ci d’architecture) mais je garde ça pour un prochain article.
+Ici l’idée n’est pas d’avancer que le feng shui serait formellement dialectique (encore moins matérialiste) mais de voir qu’on peut facilement tisser des liens entre tout ça. Même Mao a trouvé des choses intéressantes dans la discipline (malgré sa future interdiction par les cocos chinois de l’époque) !
 
 ## Place à la pratique
 
 ### État des lieux
 
-Ci-dessous se trouve un plan de mon appartement :
+Ci-dessous se trouve un plan de mon appartement :
 
 ```Plan de la chambre (Lit, Bureau, Placard, Cuisine, Etagère, Table)
                 ↓ fenêtre
@@ -51,13 +51,13 @@ Ci-dessous se trouve un plan de mon appartement :
 ```
 
 Ici plusieurs choses ne vont pas (mis à part le manque de proportions).
-Si le placard permet de ralentir l'énergie venant de la porte, elle parvient tout de même à atteindre mes pieds quand je dors, ça ne va pas du tout.
-Le bureau aussi est très mal placé : quand je travaille (ça arrive) j'ai la tête en face du mur et le dos vers le reste de la pièce (donc la porte) et pour couronner le tout, la lumière du jour vient souvent gêner l'écran de mon ordinateur. Au final, j'ai fini par le plus souvent directement travailler sur l'autre table où au moins, je n'ai pas le problème d'avoir le dos tourné vers la porte et l'écran illisible quand il y a du soleil (ça s'est fait tout seul hein, je n'ai pas fait ça avec le feng shui en tête).
-L'étagère où il y a la bouffe, les couverts et des bouquins en haut est placée au pire endroit, pile à côté de la kitchenette, du coup tout prend l'huile quand j'utilise une poêle ou l'eau si je fais des pâtes.
+Si le placard permet de ralentir l’énergie venant de la porte, elle parvient tout de même à atteindre mes pieds quand je dors, ça ne va pas du tout.
+Le bureau aussi est très mal placé : quand je travaille (ça arrive) j’ai la tête en face du mur et le dos vers le reste de la pièce (donc la porte) et pour couronner le tout, la lumière du jour vient souvent gêner l’écran de mon ordinateur. Au final, j’ai fini par le plus souvent directement travailler sur l’autre table où au moins, je n’ai pas le problème d’avoir le dos tourné vers la porte et l’écran illisible quand il y a du soleil (ça s’est fait tout seul hein, je n’ai pas fait ça avec le feng shui en tête).
+L’étagère où il y a la bouffe, les couverts et des bouquins en haut est placée au pire endroit, pile à côté de la kitchenette, du coup tout prend l’huile quand j’utilise une poêle ou l’eau si je fais des pâtes.
 
 ### Réarrangement
 
-Ci-dessous le plan du T1 réarrangé :
+Ci-dessous le plan du T1 réarrangé :
 
 ```Plan de la chambre (Lit, Bureau, Placard, Cuisine, Etagère, Table)
                  ↓ fenêtre
@@ -76,15 +76,15 @@ Ci-dessous le plan du T1 réarrangé :
               ↑ porte
 ```
 
-Pour régler le problème du lit, j'aurais pu tout simplement tourner de 90° le placard, pour créer un « mur » entre la porte et le lit. Sauf qu'il y a deux nouveaux problèmes : le seul endroit qui permet de ne pas perdre trop d'espace côté cuisine à un radiateur attaché au mur, et de toute façon il y a un grand miroir sur l'une des deux portes du placard, qui pointerait directement vers le lit, ce qui évidemment n'est pas du tout une bonne chose (sans parler mystique etc dormir avec un miroir en face, c'est très désagréable).
-La solution fut donc de bouger le lit à l'opposé de la pièce, à la place du bureau et de la table, en tournant de 90° l'étagère pour faire le fameux mur (avec un drap blanc sur l'étagère pour ne pas avoir les pieds dans la nourriture). Cela règle à la fois le problème du lit vers la porte et l'étagère à côté de la kitchenette. En plus j'ai maintenant mes idoles juste au-dessus du lit, ce qui est formidable, avec une petite étagère qui ne me servait à rien quand elle était au-dessus du bureau et qui maintenant sert à porter une lampe (pour lire).
+Pour régler le problème du lit, j’aurais pu tout simplement tourner de 90° le placard, pour créer un « mur » entre la porte et le lit. Sauf qu’il y a deux nouveaux problèmes : le seul endroit qui permet de ne pas perdre trop d’espace côté cuisine à un radiateur attaché au mur, et de toute façon il y a un grand miroir sur l’une des deux portes du placard, qui pointerait directement vers le lit, ce qui évidemment n’est pas du tout une bonne chose (sans parler mystique etc dormir avec un miroir en face, c’est très désagréable).
+La solution fut donc de bouger le lit à l’opposé de la pièce, à la place du bureau et de la table, en tournant de 90° l’étagère pour faire le fameux mur (avec un drap blanc sur l’étagère pour ne pas avoir les pieds dans la nourriture). Cela règle à la fois le problème du lit vers la porte et l’étagère à côté de la kitchenette. En plus j’ai maintenant mes idoles juste au-dessus du lit, ce qui est formidable, avec une petite étagère qui ne me servait à rien quand elle était au-dessus du bureau et qui maintenant sert à porter une lampe (pour lire).
 
-Le bureau lui a été déplacé à l'opposé du lit, dos au mur. Le mur en plus de servir de « support » permet d'avoir un joli fond si je fais des appels vidéos (j'ai une jolie carte de Tokyo à cet endroit). Il est en « command position » puisqu'il surplombe la pièce également. La chaise est dans l'axe de la porte mais ça ne fait rien puisque je n'ai pas d'autres endroits où mettre le bureau et le placard protège un peu aussi.
+Le bureau lui a été déplacé à l’opposé du lit, dos au mur. Le mur en plus de servir de « support » permet d’avoir un joli fond si je fais des appels vidéos (j’ai une jolie carte de Tokyo à cet endroit). Il est en « command position » puisqu’il surplombe la pièce également. La chaise est dans l’axe de la porte mais ça ne fait rien puisque je n’ai pas d’autres endroits où mettre le bureau et le placard protège un peu aussi.
 
-Pour finir j'ai mis la table un peu en face de la kitchenette, ce qui est bien plus pratique quand je fais à manger, la vaisselle, etc.
+Pour finir j’ai mis la table un peu en face de la kitchenette, ce qui est bien plus pratique quand je fais à manger, la vaisselle, etc.
 
 ### Ce qui pourrait être bien
 
-J'aimerais m'acheter une nouvelle étagère pour y mettre les livres (ils n'ont rien à faire dans la cuisine) et le reste de mes conneries qui sont dans le placard. Je pourrais la placer soit pas loin du bureau, soit étendre la cloison à côté du lit (je perdrais beaucoup de lumière en faisant ça par contre).
-Aussi, dans l'entrée ça serait bien un porte-manteau à mettre au mur entre le compteur électrique et le placard, plus un truc en bois pour y mettre les godasses.
-Il manque une lampe pour le bureau qui n'est pas assez éclairé.
+J’aimerais m’acheter une nouvelle étagère pour y mettre les livres (ils n’ont rien à faire dans la cuisine) et le reste de mes conneries qui sont dans le placard. Je pourrais la placer soit pas loin du bureau, soit étendre la cloison à côté du lit (je perdrais beaucoup de lumière en faisant ça par contre).
+Aussi, dans l’entrée ça serait bien un porte-manteau à mettre au mur entre le compteur électrique et le placard, plus un truc en bois pour y mettre les godasses.
+Il manque une lampe pour le bureau qui n’est pas assez éclairé.

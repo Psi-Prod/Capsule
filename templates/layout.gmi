@@ -1,4 +1,4 @@
 {%- autoescape false -%}
 {{ body }}
 {% endautoescape -%}
-=> / Retour à l'accueil
+=> / Retour à l’accueil

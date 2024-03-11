@@ -12,13 +12,13 @@ tags:
 
 On dit souvent que la programmation orientée objet est une fonctionnalité de niche en OCaml et qu'elle n'arrive pas à la cheville de l'expressivité du système de module. Et c'est plutôt vrai, les utilisations des objets et des classes sont rares et peu idiomatiques, le système de module évitant d'avoir à manipuler des longues et complexes chaînes d'héritage. C'est en bricolant avec js_of_ocaml (un compilateur de bytecode OCaml produisant du JavaScript) que j'ai trouvé un cas d'usage que je trouve intéressant.
 
-Avec js_of_ocaml, je suis souvent amené à muter des variables dans des _closures_ et donc à entretenir des états. La façon la plus simple de manipuler des états mutables en OCaml est d'utiliser des références dont la définition de type dans la librairie standard est la suivante :
+Avec js_of_ocaml, je suis souvent amené à muter des variables dans des _closures_ et donc à entretenir des états. La façon la plus simple de manipuler des états mutables en OCaml est d'utiliser des références dont la définition de type dans la librairie standard est la suivante :
 
 ```ocaml
-type 'a ref = { mutable content : 'a }
+type 'a ref = { mutable content : 'a }
 ```
 
-(Fun fact : les références n'existent pas stricto sensu en OCaml, mais les champs de record mutables eux oui)
+(Fun fact : les références n'existent pas stricto sensu en OCaml, mais les champs de record mutables eux oui)
 
 Mais voilà, lorsqu'on se retrouve avec plusieurs états mutables on obtient un code moche truffé de `ref`s où l'on est obligé d'utiliser les horribles opérateurs associés `!` et `:=` (immondices) pour y accéder.
 
@@ -26,7 +26,7 @@ Une solution simple pour pallier à ce problème est l'utilisation d'objets. Cer
 
 # Exemple
 
-Prenons l'exemple simple d'un compteur à incrémenter :
+Prenons l'exemple simple d'un compteur à incrémenter :
 
 (J'utilise par ailleurs la bibliothèque `tyxml` qui permet la construction de HTML directement depuis OCaml et qui s'interface bien avec `js_of_ocaml`)
 
@@ -44,17 +44,17 @@ class score =
     method button = Tyxml_js.To_dom.of_button button
 
     initializer
-    self#button##.onclick :=
+    self#button##.onclick :=
       Dom_html.handler (fun _ ->
           score <- score + 1;
           self#refresh;
           Js._false)
 
-    method refresh = self#button##.innerText := Js.string (Int.to_string score)
+    method refresh = self#button##.innerText := Js.string (Int.to_string score)
   end
 ```
 
-Compteur qui s'utilise de la manière suivante :
+Compteur qui s'utilise de la manière suivante :
 
 ```ocaml
 open Js_of_ocaml
@@ -66,12 +66,12 @@ let onload _ =
   Dom.appendChild main score#button;
   Js._false
 
-let () = Dom_html.(window##.onload := handler onload)
+let () = Dom_html.(window##.onload := handler onload)
 ```
 
 Et voilà, tout est encapsulé dans un objet et je ne suis plus contraint de trimballer des références partout.
 
-Si vous voulez tester vous-même, voici la _stanza_ dune pour compiler l'exemple :
+Si vous voulez tester vous-même, voici la _stanza_ dune pour compiler l'exemple :
 
 ```dune
 (executable
@@ -88,7 +88,7 @@ Si vous voulez tester vous-même, voici la _stanza_ dune pour compiler l'exemple
   (copy example.bc.js main.js)))
 ```
 
-Et qui nécessite le code HTML suivant :
+Et qui nécessite le code HTML suivant :
 ```html
 <!DOCTYPE html>
 

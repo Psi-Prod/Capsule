@@ -1,12 +1,12 @@
 # Bannières
 
 => /banners/reunion.png Réunion
-=> /banners/1an.png 1er anniversaire d'heyplzlookatme
+=> /banners/1an.png 1er anniversaire d’heyplzlookatme
 => /banners/ayanami-crous.png Ayanami x Crous
 => /banners/debat-intense.png Débat intense
 => /banners/mer-au-jourdain.png De la mer au Jourdain
 => /banners/bande.png La bande à Goyot
-=> /banners/fete-de-lhuma.png Fête de l'Huma 2k23
+=> /banners/fete-de-lhuma.png Fête de l’Huma 2k23
 => /banners/maintenance-h24.png Maintenance h24
 => /banners/d&r.png Fan club de D&R
 => /banners/leo-et-tim.png Léo et Tim

@@ -1,4 +1,4 @@
-```blogs page's banner
+```blogs page’s banner
        .--.                   .---.
    .---|__|           .-.     |~~~|
 .--|===|--|_          |_|     |~~~|--.
@@ -22,7 +22,7 @@
 
 ## Sur le Web
 
-### À propos d'OCaml (notamment)
+### À propos d’OCaml (notamment)
 
 => https://blog.osau.re/
 => https://hannes.nqsb.io/

@@ -10,19 +10,19 @@ tags:
 - mehari
 ---
 
-Mehari 0.3 est sorti et aujourd'hui nous allons discuter de la prochaine version : Mehari 0.4 (nom de code: prostate lovers)
+Mehari 0.3 est sorti et aujourd’hui nous allons discuter de la prochaine version : Mehari 0.4 (nom de code: prostate lovers)
 
-Pour ceux qui ont cliqué pour la version 0.3, le changelog complet est disponible ci-dessous :
+Pour ceux qui ont cliqué pour la version 0.3, le changelog complet est disponible ci-dessous :
 
 => https://github.com/Psi-Prod/Mehari/releases/tag/0.3
 
-N'hésitez pas à faire vos remarques sur l'API de Mehari en commentaire.
+N’hésitez pas à faire vos remarques sur l’API de Mehari en commentaire.
 
-## Dans l'assimilation parfaite
+## Dans l’assimilation parfaite
 
-Pondre une API bien lissée est probablement ce que je préfère faire en programmation (c'est notamment pour cette raison que j'aime OCaml). Pour rendre dépendant des utilisateurs de ma seule volonté et percer dans le OCaml jeu, il vaut mieux écrire des bibliothèques aussi composables que possible. Si le meilleur des pythonista se mettait à écrire une bibliothèque OCaml, il produirait assurément quelque chose de convenable mais pas très agréable à utiliser. Et c'est bien normal car il ne connaît ni les idiomes du langage, ni son écosystème.
+Pondre une API bien lissée est probablement ce que je préfère faire en programmation (c’est notamment pour cette raison que j’aime OCaml). Pour rendre dépendant des utilisateurs de ma seule volonté et percer dans le OCaml jeu, il vaut mieux écrire des bibliothèques aussi composables que possible. Si le meilleur des pythonista se mettait à écrire une bibliothèque OCaml, il produirait assurément quelque chose de convenable mais pas très agréable à utiliser. Et c’est bien normal car il ne connaît ni les idiomes du langage, ni son écosystème.
 
-Venons-en au point, je n'aime pas trop la façon dont les paramètres de route sont gérés dans Mehari. Je m'explique :
+Venons-en au point, je n’aime pas trop la façon dont les paramètres de route sont gérés dans Mehari. Je m’explique :
 
 ```ocaml
 let my_route =
@@ -32,7 +32,7 @@ let my_route =
 
 Ici, on définit une route qui match tous les chemins qui commencent par `echo` et on renvoie le reste du chemin en utilisant `Mehari.param`.
 
-Normalement, un truc a dû vous piquer les yeux. Les regex sont écrites en clair au lieu d'utiliser un DSL pur OCaml typesafe ! Et oui, il existe une super librairie – sobrement nommé `ocaml-re` (🗿) – qui permet d'écrire des regex de manière encore plus incompréhensible :
+Normalement, un truc a dû vous piquer les yeux. Les regex sont écrites en clair au lieu d’utiliser un DSL pur OCaml typesafe ! Et oui, il existe une super librairie – sobrement nommé `ocaml-re` (🗿) – qui permet d’écrire des regex de manière encore plus incompréhensible :
 
 ```ocaml
 Re.(seq [ str "foo="; group (rep1 any) ]) <=> "foo=(.+)
@@ -40,23 +40,23 @@ Re.(seq [ str "foo="; group (rep1 any) ]) <=> "foo=(.+)
 
 => https://github.com/ocaml/ocaml-re
 
-On va donc remplacer le paramètre labellisé booléen `regex` par quelque chose de plus puissant pour choisir si l'on souhaite :
+On va donc remplacer le paramètre labellisé booléen `regex` par quelque chose de plus puissant pour choisir si l’on souhaite :
 
-* Fournir un `Re.t` ;
-* Donner une route telle quelle sous forme de string ;
+* Fournir un `Re.t` ;
+* Donner une route telle quelle sous forme de string ;
 * Écrire la regex en clair pour laisser les UNIX glob guys faire leur merdier.
 
-Pour ce faire, deux options s'offrent à nous :
+Pour ce faire, deux options s’offrent à nous :
 
-* un GADT : c'est stylé et ça permet de faire varier le type de la route en fonction du paramètre donné ;
-* la simplicité : plusieurs fonctions séparées (`route_regex`, `route`…).
+* un GADT : c’est stylé et ça permet de faire varier le type de la route en fonction du paramètre donné ;
+* la simplicité : plusieurs fonctions séparées (`route_regex`, `route`…).
 
-Utiliser un GADT signifierait devoir préciser un paramètre labellisé pour chaque type de route, même lorsqu'on veut gérer une route triviale comme `/articles`, ce qui n'est pas le cas actuellement dans Mehari. En effet, placer un constructeur d'un GADT en tant qu'argument par défaut conduit à fixer le type de ce dernier et interdit logiquement d'utiliser des constructeurs d'un type différent :
+Utiliser un GADT signifierait devoir préciser un paramètre labellisé pour chaque type de route, même lorsqu’on veut gérer une route triviale comme `/articles`, ce qui n’est pas le cas actuellement dans Mehari. En effet, placer un constructeur d’un GADT en tant qu’argument par défaut conduit à fixer le type de ce dernier et interdit logiquement d’utiliser des constructeurs d’un type différent :
 
 ```ocaml
 type _ t = Int : int t | String : string t
 
-let print (type a) ?(typ=Int) (x : a) = ...
+let print (type a) ?(typ=Int) (x : a) = …
 
 let _ = print ~typ:String ""
                    ^^^^^^^^^
@@ -65,26 +65,26 @@ Error: This expression has type string t but an expression was expected of type
        Type string is not compatible with type int
 ```
 
-> Si vous êtes intéressé par les GADT, j'en ai déjà parlé moins brièvement dans cet article :
+> Si vous êtes intéressé par les GADT, j’en ai déjà parlé moins brièvement dans cet article :
 => /articles/gadt-mehari.gmi
 
 ### Que faire
 
-Dans les deux cas présentés, ce serait un breaking change. Mais qui utilise Mehari pour faire tourner son serveur Gemini, sérieusement ?
+Dans les deux cas présentés, ce serait un breaking change. Mais qui utilise Mehari pour faire tourner son serveur Gemini, sérieusement ?
 
 ### Explication du design
 
-Maintenant que le sujet est sur la table, je voulais m'expliquer concernant le choix de supporter directement des regex plutôt que d'imposer notre propre système comme Dream le fait. D'un côté, Dream est plus lisible avec ses paramètres nommés (`/foo/:bar`) mais d'un autre côté, les expressions régulières sont plus puissantes, bien que plus « austères ». À cela s'ajoute un argument non négligeable : on n'avait pas envie de se faire chier.
+Maintenant que le sujet est sur la table, je voulais m’expliquer concernant le choix de supporter directement des regex plutôt que d’imposer notre propre système comme Dream le fait. D’un côté, Dream est plus lisible avec ses paramètres nommés (`/foo/:bar`) mais d’un autre côté, les expressions régulières sont plus puissantes, bien que plus « austères ». À cela s’ajoute un argument non négligeable : on n’avait pas envie de se faire chier.
 
 ## Le cas de Mehari.param
 
-En bidouillant un peu, je me suis aperçu que la sémantique de Mehari.param est assez déplorable. En effet, cette fonction lève la même exception si l'index est négatif et si la paramètre demandé n'est pas présent dans la route. Ci-dessous un extrait de la doc :
+En bidouillant un peu, je me suis aperçu que la sémantique de Mehari.param est assez déplorable. En effet, cette fonction lève la même exception si l’index est négatif et si la paramètre demandé n’est pas présent dans la route. Ci-dessous un extrait de la doc :
 
 > Mehari.param req n retrieves the n-th path parameter of req.
 > Raise Invalid_argument if n is not a positive integer
 > Raise Invalid_argument if path does not contain any parameters in which case the program is buggy.
 
-C'est donc sémantiquement impossible de distinguer une mauvaise utilisation de la fonction d'une erreur de programmation, même en matchant sur le string contenu dans le constructeur `Invalid_argument` !
+C’est donc sémantiquement impossible de distinguer une mauvaise utilisation de la fonction d’une erreur de programmation, même en matchant sur le string contenu dans le constructeur `Invalid_argument` !
 
 ```ocaml
 try Mehari.param req 1 with Invalid_argument msg when String.starts_with ~prefix:"xxx" -> raise "JE SUIS COMPLÈTEMENT FOU 😹"
@@ -94,11 +94,11 @@ On va donc prochainement lever `Not_found` lorsque la route ne contiendra aucun 
 
 ## Formater les esprits
 
-Après m'avoir laissé pour le moins perplexe pendant longtemps, j'ai découvert que le module Format était une fesserie. Je me suis ainsi convaincu qu'utiliser cette machinerie dans la fonction `Gemtext.to_string` pouvait potentiellement être une bonne idée.
+Après m’avoir laissé pour le moins perplexe pendant longtemps, j’ai découvert que le module Format était une fesserie. Je me suis ainsi convaincu qu’utiliser cette machinerie dans la fonction `Gemtext.to_string` pouvait potentiellement être une bonne idée.
 
-Je me suis heureusement rendu compte qu'utiliser Format a la fâcheuse tendance de ne plus faire de la fonction `Gemtext.of_string` une bijection réciproque de `Gemtext.to_string` (car Format implémente le soft-wrap des lignes trop longues).
+Je me suis heureusement rendu compte qu’utiliser Format a la fâcheuse tendance de ne plus faire de la fonction `Gemtext.of_string` une bijection réciproque de `Gemtext.to_string` (car Format implémente le soft-wrap des lignes trop longues).
 
-Pour me pardonner de mon impertinence, voici une recette pour obtenir un rendu Gemtext lisible qui rend hommage au beau, au juste et au vrai :
+Pour me pardonner de mon impertinence, voici une recette pour obtenir un rendu Gemtext lisible qui rend hommage au beau, au juste et au vrai :
 
 ```ocaml
 let pp_line ppf =
@@ -143,7 +143,7 @@ let () =
   Format.printf "%a%!" pp gemtext
 ```
 
-Imprégnez-vous maintenant d'esthétique, misérables misomuses :
+Imprégnez-vous maintenant d’esthétique, misérables misomuses :
 
 ```Sortie du programme ci-dessus
 Ⅰ Salut la
@@ -155,7 +155,7 @@ Imprégnez-vous maintenant d'esthétique, misérables misomuses :
 Ⅱ Passions
 
 Liste des
-passions :
+passions :
 – le langage de
   prog OCaml
 – Marx
@@ -168,21 +168,21 @@ passions :
 
 ### Mehari_mirage.static
 
-Pour encore mieux intégrer mehari-mirage, j'aimerais bien ajouter une fonction pour servir statiquement des fichiers depuis une expression de type `Mirage_kv.RO`.
+Pour encore mieux intégrer mehari-mirage, j’aimerais bien ajouter une fonction pour servir statiquement des fichiers depuis une expression de type `Mirage_kv.RO`.
 
 ### Un paquet Gemtext
 
-Il faudrait que l'on factorise le module Gemtext de Mehari dans un paquet tierce car on l'utilise également dans Razzia, notre client Gemini secret non publié sur Opam en raison du manque de motivation pour écrire sa documentation (mais qui reste malgré tout utilisable). De plus, cela nous permettrait de pouvoir tester le parser convenablement.
+Il faudrait que l’on factorise le module Gemtext de Mehari dans un paquet tierce car on l’utilise également dans Razzia, notre client Gemini secret non publié sur Opam en raison du manque de motivation pour écrire sa documentation (mais qui reste malgré tout utilisable). De plus, cela nous permettrait de pouvoir tester le parser convenablement.
 
 => https://github.com/Psi-Prod/Razzia
 
 ### Dernier recourt
 
-En y repensant, je me disais qu'il faudrait pouvoir personnaliser le comportement en cas de not found avec un handler même si c'est techniquement réalisable avec ce hack :
+En y repensant, je me disais qu’il faudrait pouvoir personnaliser le comportement en cas de not found avec un handler même si c’est techniquement réalisable avec ce hack :
 
 ```ocaml
 Mehari_lwt_unix.router [
-  ...;
+  …;
   Mehari_lwt_unix.route "/(.*)" ~regex:true (fun _ ->
     Mehari.response not_found "not found !")
 ]

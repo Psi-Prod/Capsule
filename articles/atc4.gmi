@@ -1,5 +1,5 @@
 ---
-title: "ぼくは航空管制官4 ou le meilleur jeu de simulation d'ATC"
+title: "ぼくは航空管制官4 ou le meilleur jeu de simulation d’ATC"
 date: 2023-08-08
 authors:
   - Léo
@@ -9,77 +9,77 @@ tags:
   - avions
 ---
 
-=> /images/avions_sovl.jpg GLOIRE AU PEUPLE SOVIÉTIQUE, CRÉATEUR D'UNE AVIATION PUISSANTE !
+=> /images/avions_sovl.jpg GLOIRE AU PEUPLE SOVIÉTIQUE, CRÉATEUR D’UNE AVIATION PUISSANTE !
 
 ## Un jeu qui se démarque des autres
 
-Il y a beaucoup de jeux de simulation d'ATC, des simulateurs tout court aussi. Je n'en ai pas testé beaucoup, c'est évident /mais/ une chose est claire ! la plupart ont beaucoup de points communs qui font qu'ATC4 se démarque du lot.
+Il y a beaucoup de jeux de simulation d’ATC, des simulateurs tout court aussi. Je n’en ai pas testé beaucoup, c’est évident /mais/ une chose est claire ! la plupart ont beaucoup de points communs qui font qu’ATC4 se démarque du lot.
 ATC4 est très amusant alors que les autres sont chiants pour la plupart (véridique).
-Le jeu est très joli (joli radar, jolie météo, jolis avions etc etc) alors qu'un vieux TRACON c'est rigolo 5 minutes mais je préfère faire autre chose plutôt que d'imaginer les avions derrière les vieux pixels qui bougent.
-Le jeu est assez réaliste ! Dans la mesure où je le compare à ce que j'ai pu voir sur IVAO (qui est pour moi dans le haut du panier niveau réalisme). J'imagine bien que dans la vraie vie c'est très différent d'IVAO mais je m'en fiche.
-Les voix sont très bien faites, contrairement aux autres où il n'y a juste pas de voix ou alors c'est synthétisé de façon atroce. Il y a également une très bonne utilisation de la stéréo : les pilotes à gauches, l'ATC à droite et les _annoncements_ devant, ce qui permet que tout soit bien clair et entendable.
-Il y a une flopée d'extensions : aéroports, avions, mods… mais elles sont surtout de qualités (en particulier les DLCs) puisque chaque aéroport est modélisé à la main par les développeurs du jeu, ainsi que les missions, qui durent en général une demi-heure et sont de véritables challenges, pas juste un débit d'avions aléatoires qu'on augmente progressivement.
-On a aussi une simplicité d'utilisation qui permet la complexité ! J'ai demandé à mon daron qu'il essaie de jouer (sans passer le tutoriel, j'étais à côté pour l'aider) et au bout de 5 minutes il pouvait se débrouiller seul. Par contre, il y a des missions qui restent, elles, très complexes à aborder en termes de stratégie (la vitesse est un avantage qui ne peut être acquise qu'avec une bonne approche).
-L'approche plus « arcade » est bien dosée (pas trop envahissante mais présente quand même), ce qui justement rend le jeu amusant.
+Le jeu est très joli (joli radar, jolie météo, jolis avions etc etc) alors qu’un vieux TRACON c’est rigolo 5 minutes mais je préfère faire autre chose plutôt que d’imaginer les avions derrière les vieux pixels qui bougent.
+Le jeu est assez réaliste ! Dans la mesure où je le compare à ce que j’ai pu voir sur IVAO (qui est pour moi dans le haut du panier niveau réalisme). J’imagine bien que dans la vraie vie c’est très différent d’IVAO mais je m’en fiche.
+Les voix sont très bien faites, contrairement aux autres où il n’y a juste pas de voix ou alors c’est synthétisé de façon atroce. Il y a également une très bonne utilisation de la stéréo : les pilotes à gauches, l’ATC à droite et les _annoncements_ devant, ce qui permet que tout soit bien clair et entendable.
+Il y a une flopée d’extensions : aéroports, avions, mods… mais elles sont surtout de qualités (en particulier les DLCs) puisque chaque aéroport est modélisé à la main par les développeurs du jeu, ainsi que les missions, qui durent en général une demi-heure et sont de véritables challenges, pas juste un débit d’avions aléatoires qu’on augmente progressivement.
+On a aussi une simplicité d’utilisation qui permet la complexité ! J’ai demandé à mon daron qu’il essaie de jouer (sans passer le tutoriel, j’étais à côté pour l’aider) et au bout de 5 minutes il pouvait se débrouiller seul. Par contre, il y a des missions qui restent, elles, très complexes à aborder en termes de stratégie (la vitesse est un avantage qui ne peut être acquise qu’avec une bonne approche).
+L’approche plus « arcade » est bien dosée (pas trop envahissante mais présente quand même), ce qui justement rend le jeu amusant.
 Aussi, le jeu fonctionne parfaitement sur mac et linux et ne demande pas trop de perfs pour être jouable.
 
-## Les points qui m'embêtent
+## Les points qui m’embêtent
 
-Je suis encore largement un novice en contrôle aérien donc je risque de dire n'importe quoi, mais je vais tout de même lister certains points facilement corrigeables à mon humble avis. Si vous voyez que je viens de dire n'importe quoi, n'hésitez pas à le signaler en commentaire.
+Je suis encore largement un novice en contrôle aérien donc je risque de dire n’importe quoi, mais je vais tout de même lister certains points facilement corrigeables à mon humble avis. Si vous voyez que je viens de dire n’importe quoi, n’hésitez pas à le signaler en commentaire.
 
-Il est impossible de spécifier la sortie de piste autrement que par « available taxiway » ou « far right/left taxiway », même si ça à la limite, on s'en fiche un peu.
-Quand deux avions sont bloqués (un fait son pushback l'autre roule) impossible de faire avancer l'un ou reculer l'autre, du coup on est complètement bloqué.
+Il est impossible de spécifier la sortie de piste autrement que par « available taxiway » ou « far right/left taxiway », même si ça à la limite, on s’en fiche un peu.
+Quand deux avions sont bloqués (un fait son pushback l’autre roule) impossible de faire avancer l’un ou reculer l’autre, du coup on est complètement bloqué.
 => /images/taxiway.jpg Exemple typique
 
-En cas d'urgence, impossible d'indiquer un cap en degré à un avion, on peut uniquement indiquer un vecteur avant l'approche finale ou faire un go-around juste avant l'atterrissage, ce qui demande à l'avion de quand même approcher la piste (et donc game over vu que les deux avions vont se toucher) ; je sais pas si c'est très réaliste par contre. Normalement, j'imagine que ce genre de situation n'est pas censée se produire.
+En cas d’urgence, impossible d’indiquer un cap en degré à un avion, on peut uniquement indiquer un vecteur avant l’approche finale ou faire un go-around juste avant l’atterrissage, ce qui demande à l’avion de quand même approcher la piste (et donc game over vu que les deux avions vont se toucher) ; je sais pas si c’est très réaliste par contre. Normalement, j’imagine que ce genre de situation n’est pas censée se produire.
 => /images/goaround.jpg Exemple typique
 
-Il est également impossible d'indiquer une vitesse précise, on a pour seule option « reduce speed » qui réduit la vitesse à 180kts.
-On ne peut pas connaître le plan de vol d'un avion avant son décollage, l'inverse permettrait de savoir dans quel sens il part et donc de gérer le trafic plus facilement ; peut-être même l'indiquer avec la ligne verte dès le début, pour éviter d'avoir à ouvrir un PDF pour pouvoir jouer.
-On ne peut pas non plus faire rentrer un avion au garage si on s'est trompé de piste après le pushback ; sur RJCC j'ai pas prévu le changement de piste et du coup un avion a dû partir sur la mauvaise, augmentant le « risque ».
-Il est aussi globalement impossible d'annuler rapidement une décision (ce qui serait possible dans la vraie vie) ; je ne pense pas que ça serait au détriment du gameplay puisque ça pourrait coûter des points en efficacité (ou risque).
+Il est également impossible d’indiquer une vitesse précise, on a pour seule option « reduce speed » qui réduit la vitesse à 180kts.
+On ne peut pas connaître le plan de vol d’un avion avant son décollage, l’inverse permettrait de savoir dans quel sens il part et donc de gérer le trafic plus facilement ; peut-être même l’indiquer avec la ligne verte dès le début, pour éviter d’avoir à ouvrir un PDF pour pouvoir jouer.
+On ne peut pas non plus faire rentrer un avion au garage si on s’est trompé de piste après le pushback ; sur RJCC j’ai pas prévu le changement de piste et du coup un avion a dû partir sur la mauvaise, augmentant le « risque ».
+Il est aussi globalement impossible d’annuler rapidement une décision (ce qui serait possible dans la vraie vie) ; je ne pense pas que ça serait au détriment du gameplay puisque ça pourrait coûter des points en efficacité (ou risque).
 
-D'autres points ont été relevés sur la page discussion sur Steam à propos notamment du manque de réalisme au niveau des avions militaires mais là j'y connais rien donc je vais rien dire dessus.
+D’autres points ont été relevés sur la page discussion sur Steam à propos notamment du manque de réalisme au niveau des avions militaires mais là j’y connais rien donc je vais rien dire dessus.
 
-## ぼくは航空管制官5 ?
+## ぼくは航空管制官5 ?
 
-Pour un futur ATC5, j'aurais aimé un truc qui demande un peu plus de perfs mais qui soit plus photoréaliste : des villes en 3D, une mer plus jolie, des avions un peu plus définis et du trafic au sol lui aussi plus animé (les tracteurs pourraient aller là où il faut au lieu de disparaître dans les airs, des agents de piste aussi, ça serait excellent).
-Pouvoir voir dans les avions et l'intérieur de la tour, ça serait sympa aussi.
-Sur RJTT/RJAA ce que serait très bien aussi c'est des compagnies transcontinentales !!
-=> /audio/good_day.wav Je veux entendre la jolie voix de DEP dire « good day » à AFR1234…
+Pour un futur ATC5, j’aurais aimé un truc qui demande un peu plus de perfs mais qui soit plus photoréaliste : des villes en 3D, une mer plus jolie, des avions un peu plus définis et du trafic au sol lui aussi plus animé (les tracteurs pourraient aller là où il faut au lieu de disparaître dans les airs, des agents de piste aussi, ça serait excellent).
+Pouvoir voir dans les avions et l’intérieur de la tour, ça serait sympa aussi.
+Sur RJTT/RJAA ce que serait très bien aussi c’est des compagnies transcontinentales !!
+=> /audio/good_day.wav Je veux entendre la jolie voix de DEP dire « good day » à AFR1234…
 
-## Où trouver le jeu & guide d'installation
+## Où trouver le jeu & guide d’installation
 
 ### Payer de façon honnête et civile
 
-La version anglophone est disponible sur Steam à cette adresse :
+La version anglophone est disponible sur Steam à cette adresse :
 => https://store.steampowered.com/app/1348390/I_am_an_Air_Traffic_Controller_4/
 
-Contrairement à la version nipponne, les livrées seront remplacées par des couleurs (style Blue Airways etc). C'est bien réalisé mais on peut préférer avoir des avions avec écrit ANA dessus. Un autre inconvénient est qu'il n'y a pas autant de DLCs sur Steam que chez Technobrain, on a accès « seulement » à Haneda, Naha, New Chitose et Osaka.
-On peut acheter la version japonaise ici :
+Contrairement à la version nipponne, les livrées seront remplacées par des couleurs (style Blue Airways etc). C’est bien réalisé mais on peut préférer avoir des avions avec écrit ANA dessus. Un autre inconvénient est qu’il n’y a pas autant de DLCs sur Steam que chez Technobrain, on a accès « seulement » à Haneda, Naha, New Chitose et Osaka.
+On peut acheter la version japonaise ici :
 => https://www.technobrain.com/atc4/
 Je ne sais pas si on peut directement payer en euros par contre.
 
 ### Vous ne voleriez pas un aéroport
 
 Pour la voie illégale, vous pouvez télécharger la version Steam sur vos sites habituels.
-Pour les japonais, allez ici :
+Pour les japonais, allez ici :
 => http://www.mediafire.com/file/r9zo09l39078kz8/ATC4_RJTT_EN_v1.40.01.exe/file RJTT
 => http://www.mediafire.com/file/otz47v8s7em2hv6/ATC4_TOKYO_HANEDA_2_RJTT2_ARHtech.zip/file RJTT2
 => http://www.mediafire.com/file/zzynntz7zai4m5l/ATC4.RJCC.v1.00_ARHTECH.zip/file RJCC
-Le reste, cherchez dans les commentaires sur ce site :
+Le reste, cherchez dans les commentaires sur ce site :
 => https://arh-techcomputer.blogspot.com
 Le mot de passe pour les archives est `arh-techcomputer.blogspot.com`.
-J'essaierai d'archiver tout ça quand j'aurai un peu plus d'espace (c.-à-d. quand on aura vidé l'ancien serveur).
-Pour « combiner » toutes les versions, prenez le dossier avec New Chitose (c'est la version la plus récente) et mettez les aéroports dans le dossier `PORT`. Quand vous lancerez le jeu avec `AXA.exe` vous devriez pouvoir choisir l'aéroport dans le jeu directement.
+J’essaierai d’archiver tout ça quand j’aurai un peu plus d’espace (c.-à-d. quand on aura vidé l’ancien serveur).
+Pour « combiner » toutes les versions, prenez le dossier avec New Chitose (c’est la version la plus récente) et mettez les aéroports dans le dossier `PORT`. Quand vous lancerez le jeu avec `AXA.exe` vous devriez pouvoir choisir l’aéroport dans le jeu directement.
 
 ### Régler les soucis
 
 Si vous avez une erreur avec OpenAL, installez-le avec `oalinst.exe` qui se trouve en général dans le dossier du jeu.
 
-Si le jeu affiche un écran noir avec « Application not found », il faut lancer `AXA.exe` avec comme argument `TITLE\ATC4TITLE.AXA` (faites un raccourci pour ne pas avoir à refaire ça à chaque fois).
+Si le jeu affiche un écran noir avec « Application not found », il faut lancer `AXA.exe` avec comme argument `TITLE\ATC4TITLE.AXA` (faites un raccourci pour ne pas avoir à refaire ça à chaque fois).
 
-Pour mettre la version japonaise en anglais, il faut remplacer dans `AXA.ini` :
+Pour mettre la version japonaise en anglais, il faut remplacer dans `AXA.ini` :
 ```
 codepage=932
 ```
@@ -89,4 +89,4 @@ codepage=293
 ```
 Attention, les dialogues en japonais ne seront pas traduits dans la boîte à logs.
 
-=> /images/avions_sovl_2.jpg VIVE LA PUISSANTE AVIATION DU PAYS DU SOCIALISME !
+=> /images/avions_sovl_2.jpg VIVE LA PUISSANTE AVIATION DU PAYS DU SOCIALISME !

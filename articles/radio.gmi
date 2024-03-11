@@ -8,46 +8,46 @@ tags:
 - meta
 ---
 
-## Pourquoi faire ??
+## Pourquoi faire ??
 
-J'ai longtemps écouté la radio (depuis le collège à peu près), en particulier France Info. Lu les journaux aussi, des articles du Monde que mon père lisait ou le Canard Enchaîné auquel je suis encore abonné (plus pour longtemps vu leurs sorties récentes). Donc, jouer au journaliste est un « rêve » d'enfance que j'ai longtemps voulu réaliser.
-C'est aujourd'hui le cas puisqu'on gère ce blog avec Tim ! C'est pas vraiment du journalisme au sens propre mais on s'en fout, l'essentiel est qu'on puisse écrire ce que l'on veut.
-Maintenant, la mode est à Twitch et plus globalement les streams indépendants, où la parole est à priori plus libre et surtout où n'importe qui ou presque peut se lancer. Pourquoi pas essayer nous aussi ?
+J’ai longtemps écouté la radio (depuis le collège à peu près), en particulier France Info. Lu les journaux aussi, des articles du Monde que mon père lisait ou le Canard Enchaîné auquel je suis encore abonné (plus pour longtemps vu leurs sorties récentes). Donc, jouer au journaliste est un « rêve » d’enfance que j’ai longtemps voulu réaliser.
+C’est aujourd’hui le cas puisqu’on gère ce blog avec Tim ! C’est pas vraiment du journalisme au sens propre mais on s’en fout, l’essentiel est qu’on puisse écrire ce que l’on veut.
+Maintenant, la mode est à Twitch et plus globalement les streams indépendants, où la parole est à priori plus libre et surtout où n’importe qui ou presque peut se lancer. Pourquoi pas essayer nous aussi ?
 
 ## Что делать?
 
-L'idée serait de faire une radio où on pourrait s'exprimer de façon un peu moins formatée qu'à l'écrit et pouvoir développer nos idées sur un temps plus long.
-Dany et Raz avec la vidéo coupée, en moins drôle et sur des sujets encore plus niches ?
-C'est justement là qu'il va falloir creuser l'idée pour ne pas finir en pire que le jet de pisse du Zawaverse.
-Plusieurs étapes seront à passer, au moins pour le moment : l'infrastructure, la DA et l'écriture.
+L’idée serait de faire une radio où on pourrait s’exprimer de façon un peu moins formatée qu’à l’écrit et pouvoir développer nos idées sur un temps plus long.
+Dany et Raz avec la vidéo coupée, en moins drôle et sur des sujets encore plus niches ?
+C’est justement là qu’il va falloir creuser l’idée pour ne pas finir en pire que le jet de pisse du Zawaverse.
+Plusieurs étapes seront à passer, au moins pour le moment : l’infrastructure, la DA et l’écriture.
 
 ### Une infra robuste
 
-Pour commencer, c'est assez simple puisqu'on a quasiment tout d'offert sur un plateau d'argent. IceCast servira de serveur pour la diffusion audio (les clients n'auront qu'à charger un lien m3u ou quelque chose du genre), de mon côté je peux utiliser butt pour me connecter à IceCast et après y'a plein d'options pour soundbox. Pour que Tim puisse parler, il suffit de brancher Discord.
-Pour câbler le tout sur mon ordinateur j'utilise Loopback (gentiment emprunté). J'ai créé deux sources « Radio » et « Idle » l'une quand on parle via Discord etc, l'autre avec simplement Spotify de brancher.
-On va pouvoir aussi créer un petit site simplement avec un lien vers l'audio et pourquoi pas une petite chatbox (celle de Twitch ou pas j'en sais rien).
-Aussi, j'aurais aimé faire une sorte de retour vidéo, un peu comme ils font sur France Inter et cie où les chroniqueurs et invités sont filmés autour de la table. Là ça serait uniquement sur Twitch.
+Pour commencer, c’est assez simple puisqu’on a quasiment tout d’offert sur un plateau d’argent. IceCast servira de serveur pour la diffusion audio (les clients n’auront qu’à charger un lien m3u ou quelque chose du genre), de mon côté je peux utiliser butt pour me connecter à IceCast et après y’a plein d’options pour soundbox. Pour que Tim puisse parler, il suffit de brancher Discord.
+Pour câbler le tout sur mon ordinateur j’utilise Loopback (gentiment emprunté). J’ai créé deux sources « Radio » et « Idle » l’une quand on parle via Discord etc, l’autre avec simplement Spotify de brancher.
+On va pouvoir aussi créer un petit site simplement avec un lien vers l’audio et pourquoi pas une petite chatbox (celle de Twitch ou pas j’en sais rien).
+Aussi, j’aurais aimé faire une sorte de retour vidéo, un peu comme ils font sur France Inter et cie où les chroniqueurs et invités sont filmés autour de la table. Là ça serait uniquement sur Twitch.
 
 ### Une D.A. pas originale
 
-Ensuite, il va falloir créer une « identité sonore » avec un jingle et tout ce qui va avec. Là aucune idée de comment s'y prendre, pour le moment on peut juste faire un peu n'importe quoi sur Logic et exporter ça.
-Je pourrais demander à de la famille ou des amis de dire « Hey please look at me! Radio ».
+Ensuite, il va falloir créer une « identité sonore » avec un jingle et tout ce qui va avec. Là aucune idée de comment s’y prendre, pour le moment on peut juste faire un peu n’importe quoi sur Logic et exporter ça.
+Je pourrais demander à de la famille ou des amis de dire « Hey please look at me! Radio ».
 
 ### Ma façon exclusive de transiger
 
-Pour finir, il va falloir qu'on décide de quoi dire et quand.
-Pour l'instant l'idée est de faire une émission qui traite à la fois d'informatique, de politique et tout autre sujet qu'on aborde sur ce blog.
-Comme l'a expliqué je ne sais plus quel streamer connu (Cassandre ?) si on veut pouvoir plaire à la fois à ceux qui viennent pour la politique et à la fois ceux qui viennent pour l'informatique, il faut « mixer » le tout : parler d'informatique avec une touche de politique, parler de politique avec une touche d'informatique, etc etc.
-Après, reste le souci de savoir quoi dire mais c'est la rentrée et les études reprennent, personnellement j'aurai moins de temps libre mais une tête plus concentrée avec espoir.
+Pour finir, il va falloir qu’on décide de quoi dire et quand.
+Pour l’instant l’idée est de faire une émission qui traite à la fois d’informatique, de politique et tout autre sujet qu’on aborde sur ce blog.
+Comme l’a expliqué je ne sais plus quel streamer connu (Cassandre ?) si on veut pouvoir plaire à la fois à ceux qui viennent pour la politique et à la fois ceux qui viennent pour l’informatique, il faut « mixer » le tout : parler d’informatique avec une touche de politique, parler de politique avec une touche d’informatique, etc etc.
+Après, reste le souci de savoir quoi dire mais c’est la rentrée et les études reprennent, personnellement j’aurai moins de temps libre mais une tête plus concentrée avec espoir.
 Pour le calendrier, dans mon idéal ça serait une heure ou plus le samedi ou dimanche soir, ça laisse la semaine pour trouver des trucs à dire.
-L'intérêt d'internet, c'est qu'on puisse rendre ça plus interactif aussi (poncifs déjà répétés 100x sur Twitch mais tranquille) donc des moments émissions où on parle, des moments où c'est plus discussion avec les gens (si y'en a).
-Des interviews aussi ! Si les gens veulent bien. J'imagine ici surtout des pelos basés sur OCaml avec qui on a pu interagir, ça pourrait faire de super discussions.
+L’intérêt d’internet, c’est qu’on puisse rendre ça plus interactif aussi (poncifs déjà répétés 100x sur Twitch mais tranquille) donc des moments émissions où on parle, des moments où c’est plus discussion avec les gens (si y’en a).
+Des interviews aussi ! Si les gens veulent bien. J’imagine ici surtout des pelos basés sur OCaml avec qui on a pu interagir, ça pourrait faire de super discussions.
 Les radios libres sinon où on laisse les gens du serveur Discord discuter.
 
 ## Conclusion
 
-Il nous reste plus qu'à nous lancer ! C'est plus facile à dire qu'à faire, mais c'est un projet auquel j'y réfléchis depuis un petit moment (Tim aussi) donc j'espère vraiment que ça pourra aboutir.
-N'hésitez pas à faire un retour en commentaire.
+Il nous reste plus qu’à nous lancer ! C’est plus facile à dire qu’à faire, mais c’est un projet auquel j’y réfléchis depuis un petit moment (Tim aussi) donc j’espère vraiment que ça pourra aboutir.
+N’hésitez pas à faire un retour en commentaire.
 
 ## Idée de programme
 
@@ -57,26 +57,26 @@ N'hésitez pas à faire un retour en commentaire.
 
 * Jingle (heyplzlookat.me radio!)
 * On se présente vite fait (genre on parle de quoi) (qui on est osef)
-* Sommaire de ce qu'on va faire durant la soirée
+* Sommaire de ce qu’on va faire durant la soirée
 
 ### Fil info
 
-* On discute rapidement des sujets actuels (même ceux qu'on va développer après)
+* On discute rapidement des sujets actuels (même ceux qu’on va développer après)
 * Ensuite sujets actuels mais informatique (OCaml surtout le reste osef un peu)
-* Pour finir le moment meta : ce qu'on est en train / va faire sur heyplzlookat.me etc
+* Pour finir le moment meta : ce qu’on est en train / va faire sur heyplzlookat.me etc
 
 ### Les émissions
 
 * Sujets sur lesquels on veut développer etc
 * On répond aux gens dans le chat en direct (vu le nombre de monde ça se fera tranquille)
 * Faut trouver des noms pas trop guez un peu golri pour les émissions
-* Trouve d'autres idées d'émissions là c'est juste des idées trouvées à 3h du matin
+* Trouve d’autres idées d’émissions là c’est juste des idées trouvées à 3h du matin
 
 ### Une ou plusieurs émissions politique (ça pourrait être un truc tah France Info)
 
-* Sujet d'actualité où on développe notre position le plus possible
-* Éviter les avis de golmon le plus possible mais après on s'en fout un peu au pire
-* L'idée c'est qu'on lise un max sur le sujet en question avant de dire de la d
+* Sujet d’actualité où on développe notre position le plus possible
+* Éviter les avis de golmon le plus possible mais après on s’en fout un peu au pire
+* L’idée c’est qu’on lise un max sur le sujet en question avant de dire de la d
 
 ### Interview avec un pelo
 
@@ -84,16 +84,16 @@ N'hésitez pas à faire un retour en commentaire.
 
 ### Projet heyplzlookat.me
 
-* On discute de l'avenir du truc
+* On discute de l’avenir du truc
 * Et en particulier sur un aspect du truc (genre jsp quel projet)
-* Exemple un tracker torrent on discute de l'implé avec le chat, comment on voit le truc etc
+* Exemple un tracker torrent on discute de l’implé avec le chat, comment on voit le truc etc
 
-### D'autres trucs...
+### D’autres trucs…
 
 ### K-Pop review (à la fin de préférence)
 
-* Juste moi qui écoute les nouvelles sorties et les trucs que les gens proposent et chie dessus si c'est à chier
-* Si Kpopalypse a sorti un nouvel article (kpop roundup ou nugu alert) je pourrais le lire et être d'accord avec presque chacun de ses avis
+* Juste moi qui écoute les nouvelles sorties et les trucs que les gens proposent et chie dessus si c’est à chier
+* Si Kpopalypse a sorti un nouvel article (kpop roundup ou nugu alert) je pourrais le lire et être d’accord avec presque chacun de ses avis
 
 ## Fin
 
