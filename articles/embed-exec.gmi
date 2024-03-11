@@ -8,7 +8,7 @@ tags:
   - c
 ---
 
-Il existe plusieurs façon d'embarquer des fichiers dans un code source C. La méthode suivante à l'avantage d'être indépendante du compilateur utilisé et donc plus portable.
+Il existe plusieurs façons d'embarquer des fichiers dans un code source C. La méthode suivante à l'avantage d'être indépendante du compilateur utilisé et donc plus portable.
 
 ## Codes sources
 
@@ -78,11 +78,11 @@ On peut alors tester les exécutables produits avec `./emb` et `./main` dans le 
 
 ## Explications
 
-Du côté du fichier emb.c il n'y a pas grand chose à dire, le programme se contente d'afficher `Hello World !`.
+Du côté du fichier emb.c, il n'y a pas grand-chose à dire, le programme se contente d'afficher `Hello World !`.
 
-Dans le fichier embb.h il y a un tableau de type `unsigned char` remplit de valeur hexadécimales et une variable de type `unsigned int`. À bien regarder, la valeur de cette variable correspond à la taille du fichier emb en octets. C'est aussi la taille du tableau. En fait embb.h est un hex dump formaté dans le format C de l'exécutable emb. Chaque valeur hexadécimal du tableau est un octet du fichier emb. Ainsi le fichier est stocké tel-quel dans un format accessible via du code C. Pour cela l'outil xxd¹ est utilisé avec la commande `xxd -i emb > embb.h`.
+Dans le fichier embb.h il y a un tableau de type `unsigned char` remplit de valeurs hexadécimaless et une variable de type `unsigned int`. À bien regarder, la valeur de cette variable correspond à la taille du fichier emb en octets. C'est aussi la taille du tableau. En fait, embb.h est un hex dump formaté dans le format C de l'exécutable emb. Chaque valeur hexadécimale du tableau est un octet du fichier emb. Ainsi le fichier est stocké tel-quel dans un format accessible via du code C. Pour cela, l'outil xxd¹ est utilisé avec la commande `xxd -i emb > embb.h`.
 
-Enfin le fichier main.c est le plus complexe. Le cœur du programme est constitué de trois parties :
+Enfin, le fichier main.c est le plus complexe. Le cœur du programme est constitué de trois parties :
 
 ### memfd_create
 
@@ -97,7 +97,7 @@ if (fd == -1)
     fprintf(stderr, "fd error %d\n", errno);
 ```
 
-`memfd_create`² va créer un fichier anonyme dans la mémoire RAM et renvoyer un file descriptor du fichier qui permet d'y accéder. Attention un file descriptor est de type `int`, c'est une abstraction des fichiers différente d'un file pointer de type `FILE *`. Les deux dernières lignes s'assurent que l'appel système s'est déroulé sans encombres.
+`memfd_create`² va créer un fichier anonyme dans la mémoire RAM et renvoyer un file descriptor du fichier qui permet d'y accéder. Attention, un file descriptor est de type `int`, c'est une abstraction des fichiers différente d'un file pointer de type `FILE *`. Les deux dernières lignes s'assurent que l'appel système s'est déroulé sans encombres.
 
 ### write
 
@@ -111,7 +111,7 @@ if (bw != emb_len)
     fprintf(stderr, "bytes write %d\n", bw);
 ```
 
-`write`³ va écrire le contenu du tableau contenu dans le fichier embb.h dans notre fichier anonyme nouvellement créé et ainsi recréer le fichier emb d'origine dans la mémoire RAM. Là encore les deux dernière ligne nous signales les éventuelles erreurs.
+`write`³ va écrire le contenu du tableau contenu dans le fichier embb.h dans notre fichier anonyme nouvellement créé et ainsi recréer le fichier emb d'origine dans la mémoire RAM. Là encore, les deux dernières lignes nous signalent les éventuelles erreurs.
 
 ### fexecve
 
@@ -128,16 +128,12 @@ perror("fexecve");
 fprintf(stderr, "fexecve error %d\n", errno);
 ```
 
-`fexecve`⁴ va à enfin exécuter notre binaire, qui se trouve dans la mémoire RAM, en lui donnant des arguments et un environnement spécifiés respectivement par `newargv` et `newenvp`. Les deux tableaux de chaînes de caractère doivent se finir par la valeur `NULL` et en générale le premier élément des arguments est le nom de l'exécutable appelé, sinon sa valeur doit être `NULL`. Si l'appel de l'exécutable fonctionne correctement le programme appelant ne se termine jamais et se transforme pour laisser la place à l'exécutable appelé. Dans le cas d'une erreur lors de l'appel le programme continue et les deux dernière ligne affichent un message d'erreur correspondant au problème. Pour éviter que le programme appelant ne soit remplacé par le programme appelé il est possible d'utiliser l'appel système `fork`⁵.
+`fexecve`⁴ va à enfin exécuter notre binaire, qui se trouve dans la mémoire RAM, en lui donnant des arguments et un environnement spécifiés respectivement par `newargv` et `newenvp`. Les deux tableaux de chaînes de caractère doivent se finir par la valeur `NULL` et en général le premier élément des arguments est le nom de l'exécutable appelé, sinon sa valeur doit être `NULL`. Si l'appel de l'exécutable fonctionne correctement, le programme appelant ne se termine jamais et se transforme pour laisser la place à l'exécutable appelé. Dans le cas d'une erreur lors de l'appel, le programme continue et les deux dernières ligne affichent un message d'erreur correspondant au problème. Pour éviter que le programme appelant ne soit remplacé par le programme appelé, il est possible d'utiliser l'appel système `fork`⁵.
 
----
+## Références
 
 => https://linux.die.net/man/1/xxd ¹ xxd
-
 => https://www.man7.org/linux/man-pages/man2/memfd_create.2.html ² memfd_create
-
 => https://www.man7.org/linux/man-pages/man2/write.2.html ³ write
-
 => https://www.man7.org/linux/man-pages/man3/fexecve.3.html ⁴ fexecve
-
 => https://www.man7.org/linux/man-pages/man2/fork.2.html ⁵ fork
