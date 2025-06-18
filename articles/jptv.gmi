@@ -1,0 +1,69 @@
+---
+title: "Télévision japonaise"
+date: 2025-06-18
+authors:
+  - Léo
+tags:
+  - jptv
+---
+
+=> /banners/jptv.png télévision baseballistique
+
+En ce moment je suis dans ma période bandeur (ça ça change pas) de baseball (japonais notamment). Ça fait un moment que j'aime bien ce sport, mais je ne savais pas où et quand regarder les matchs, ce qui a fortement limité mon appréciation potentielle.
+
+Les liens IPTV sont relativement faciles à trouver, mais mon encore plus médiocre niveau en japonais de l'époque m'empêchait à la fois de comprendre quoi que ce soit qui était dit à la télévision et de chercher les plannings des matchs.
+
+Maintenant ça a changé, j'arrive à rapidement capter ce que les gens disent globalement et j'ai trouvé un super site avec tout les matchs et la chaîne où ils sont diffusés :
+=> https://www.baseballnavi.jp/sp/
+Si vous ne savez pas à quoi correspondent les logos des chaînes, il faut scroller en bas pour avoir la liste avec les noms complets.
+
+## Comment regarder la télévision 
+
+Ensuite il faut pouvoir regarder la télévision : la grande majorité des liens japonais sur iptv-org ont soit sauté soit sont morts, notamment les liens "Willfon K" (un service IPTV de "Sankaku connection" qui propose la télévision nippone à l'étranger, mais dont les serveurs sont librement accessibles mdr) qui fonctionnaient mais coupaient toutes les 10 secondes et augmentaient le délai continuellement, ce qui rendait le visionnage d'un match particulièrement pénible.
+
+Les adresses commençaient toujours par "stream01" alors j'ai simplement essayé avec "stream02" et miracle, tout fonctionnait correctement !
+
+Pour changer de chaîne, il suffit de changer l'argument "cid" avec le numéro, par exemple BS242 pour J Sports 1 ou CS254 pour Gaora Sports. Malheureusement les chaînes terrestres sont inaccessibles via ce serveur (ou alors j'ai mal cherché).
+
+## Le site
+
+Pour réunir tout les liens dans un seul endroit pour pouvoir regarder ça confortablement, j'avais deux options : créer 300 issues sur GitHub pour remettre chaque lien, ou alors me faire un petit site avec tout ce qu'il faut. J'ai donc choisi la deuxième option :
+=> https://jptv.heyplzlookat.me
+Il suffit de cliquer sur le logo de la chaîne que vous souhaitez visionner et des liens en bas sont là pour les plannings des matchs et le programme TV (sur le site de J:COM il faut bien sélectionner les chaînes CS/BS).
+
+Si vous voulez vous pouvez ajouter vous-même les liens chez iptv-org mais personnellement j'ai vraiment la flemme.
+
+## Développement 
+
+Durant le développement du site j'ai eu un gros problème, Firefox ne peut pas charger de flux HLS directement (à l'inverse de Safari, par exemple) j'ai donc ajouté récemment le script HLS.js pour la compatibilité avec tout les navigateurs.
+
+Le deuxième problème c'est CORS, problème qui ne se présentait pas auparavant puisque c'était le navigateur qui s'occupait de charger le flux vidéo.
+
+Pour pallier à ça, puisque je n'ai pas les moyens de modifier le serveur vidéo, j'ai ajouté un proxy sur nginx, disponible à l'adresse :
+=> https://jptv.heyplzlookat.me/proxy/
+
+```Code du proxy
+location /proxy/ {
+    resolver 1.1.1.1 1.0.0.1 valid=60s;
+
+    rewrite ^/proxy/(.*)$ /$1 break;
+    proxy_pass https://$1$is_args$args;
+
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    add_header Access-Control-Allow-Origin "https://jptv.heyplzlookat.me" always;
+    add_header Access-Control-Allow-Methods "GET, OPTIONS" always;
+    add_header Access-Control-Allow-Headers "*" always;
+
+    if ($request_method = OPTIONS) {
+        add_header Access-Control-Max-Age 1728000;
+        add_header Content-Type  text/plain;
+        add_header Content-Length 0;
+        return 204;
+    }
+}
+```
+
+Le proxy sert simplement à ajouter l'en-tête "Access-Control-Allow-Origin" entre autres. Est-ce spécifier mon site suffira à limiter les abus ? Je ne sais pas mais si Dieu veut tout ira bien.
