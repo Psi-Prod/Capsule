@@ -6,7 +6,7 @@
 {%- if nb_tags > 1 %} entrées{%- else %} entrée{%- endif %})
 
 {% for article in articles -%}
-=> /{{ article.url }} {{ article.date.canonical }} {{ article.title }}
+=> {{ article.link }} {{ article.date.repr.date }} {{ article.title }}
 {%- if not loop.last %}
 {% endif %}
 {%- endfor %}
@@ -14,7 +14,7 @@
 ## Toutes les étiquettes
 
 {% for tag in tags -%}
-=> /{{ tag.link  }} {{ tag.name }} {{ tag.number }}
+=> {{ tag.link  }} {{ tag.name }} {{ tag.number }}
 {% endfor -%}
 
 {%- endautoescape -%}

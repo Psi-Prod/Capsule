@@ -1,18 +1,19 @@
-.PHONY: blogger clean clean-site deps
+USER?=
+DEST?=
+DEST_DIR := /home/$(USER)/public/
+DEST_PORT?=
 
-blogger:
-	dune build
+.PHONY: all clean build serve push
+all: build
 
 clean:
-	dune clean
+	rm -rf _build/site
 
-clean-site:
-	rm -rf _site/
+build:
+	dune exec bin/capsule.exe -- build
 
-deps:
-	opam install . --deps-only
-	opam install yocaml
-	opam install yocaml_unix yocaml_yaml yocaml_markdown yocaml_jingoo
+serve:
+	dune exec bin/capsule.exe -- serve
 
-fmt:
-	dune build @fmt --auto-promote
+push:
+	rsync --delete -r -e "ssh -p $(DEST_PORT)" _build/site/ $(USER)@$(DEST):$(DEST_DIR)

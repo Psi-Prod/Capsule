@@ -1,46 +1,60 @@
 open Yocaml
+open Yocaml_syndication
 
-let domain = "https://heyplzlookat.me"
-let feed_url = into domain "atom.xml"
-let icon_url = into domain "images/icon.png" |> Uri.of_string
-
-let articles_to_items articles =
-  List.map
-    (fun (article, url) ->
-      Model.Article.to_atom_entry (Uri.of_string (into domain url)) article)
-    articles
+let domain = Uri.of_string "https://heyplzlookat.me" |> Uri.canonicalize
+let icon_url = Uri.with_path domain "images/icon.png"
 
 let tim =
-  Syndic.Atom.author
-    ~uri:(Uri.of_string "tim-ats-d.srht.site/")
-    ~email:"tim.arnouts@protonmail.me" "Tim"
+  Person.make "Tim" ~uri:"https://site.condor-du-plateau.fr/"
+    ~email:"tim.arnouts@protonmail.com"
 
-let leo = Syndic.Atom.author ~email:"lelolartichaut@laposte.net" "Léo"
+let leo = Person.make "Léo" ~email:"lelolartichaut@laposte.net"
+let date = Datetime.make ~tz:(Tz.Plus 200)
 
-let make ((), articles) =
-  let updated =
-    match
-      Model.Articles.make articles
-      |> Model.Articles.sort_articles_by_date |> Model.Articles.articles
-    with
-    | [] -> Ptime.epoch
-    | (a, _) :: _ -> Model.Article.ptime a
+let entry_of_article article =
+  let open Atom in
+  let id = Uri.with_path domain article#link |> Uri.to_string in
+  let updated = Option.value ~default:article#date article#updated |> date in
+  let summary = Option.map text article#description in
+  let categories =
+    List.map
+      (fun tag ->
+        let scheme =
+          Resolver.relative#as_tag tag
+          |> Path.to_string |> Uri.with_path domain |> Uri.to_string
+        in
+        Category.make tag ~label:tag ~scheme)
+      article#tags
   in
-  Yocaml_syndication.Atom.make ~title:(Text "Fil Heyplzlookatme")
+  let authors = List.map Person.make article#authors in
+  entry ~id ~title:(text article#title) ~published:(date article#date) ~updated
+    ?summary ~categories
+    ~links:[ alternate id ]
+    ~authors ()
+
+let feed articles =
+  let self_uri =
+    Path.to_string Resolver.relative#atom
+    |> Uri.with_path domain |> Uri.to_string
+  in
+  let open Atom in
+  feed ~id:self_uri
+    ~title:(text "Fil Heyplzlookatme")
     ~subtitle:
-      (Text
+      (text
          "Nous postons ici des avis et commentaires politiques désastreux, des \
           devlog OCaml et d'autres trucs qui nous intéressent de près ou de \
           loin")
-    ~id:(Uri.of_string feed_url) ~authors:[ leo; tim ] ~updated
-    ~links:[ Syndic.Atom.link ~hreflang:"fr" (Uri.of_string domain) ~rel:Self ]
-    ~icon:icon_url
-    (articles_to_items articles)
+    ~updated:(updated_from_entries ()) ~icon:(Uri.to_string icon_url)
+    ~authors:Nel.(append (singleton tim) (singleton leo))
+    ~links:
+      [
+        self ~title:"Lien vers le feed" ~hreflang:"fr" self_uri;
+        alternate ~title:"Lien vers le proxy" ~hreflang:"fr"
+          ~media_type:Text_html (Uri.to_string domain);
+        alternate ~title:"Lien vers le site" ~hreflang:"fr"
+          (Uri.with_scheme domain (Some "gemini") |> Uri.to_string);
+      ]
+    entry_of_article articles
 
-let pp ppf feed =
-  Syndic.Atom.to_xml feed
-  |> Syndic.XML.to_string ~ns_prefix:(function
-       | "http://www.w3.org/2005/Atom" -> Some ""
-       | _ -> Some "http://www.w3.org/2005/Atom")
-  |> String.cat {|<?xml version="1.0" encoding="UTF-8"?>|}
-  |> Format.pp_print_string ppf
+let make gemlog = Archetypes.Gemlog.articles gemlog |> feed |> Xml.to_string

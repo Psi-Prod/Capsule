@@ -4,26 +4,20 @@
 
 {%- set nb_authors = length (authors) %}
 
-* Date : {{ date.canonical }}
-{%- if updated %} (Mis-à-jour le {{ updated.canonical }}){%- endif %}
-* {% if nb_authors > 1 %}Auteurs{% else %}Auteur{% endif %} : {% for author in authors -%}
-  {{ author.name }}
+* Date : {{ date.repr.date }}
+{%- if updated %} (Mis-à-jour le {{ updated.repr.date }}){%- endif %}
+* {% if nb_authors > 1 %}Auteurs{% else %}Auteur{% endif %} : {% for author in authors -%}
+  {{ author }}
   {%- if not loop.last %}, {% endif %}
 {%- endfor %}
-* Tags : {% for tag in tags -%}
+* Tags : {% for tag in tags -%}
   {{ tag }}
   {%- if not loop.last %}, {% endif %}
 {%- endfor %}
-
 {%- if description %}
 > {{ description }}
 {%- endif %}
-
-{%- endautoescape -%}
-
-{%- autoescape false -%}
-
-{{ body }}
+{{ yocaml_body }}
 => /gemlog.gmi Retour au gemlog
 
 {%- endautoescape -%}

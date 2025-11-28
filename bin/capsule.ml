@@ -1,231 +1,108 @@
-module M = Mehari_lwt_unix
-open Lwt.Infix
-open Lwt.Syntax
+open Cmdliner
 
-let program ~target =
-  let open Yocaml.Syntax in
-  let* () = Task.move_banners target in
-  let* () = Task.move_images target in
-  let* () = Task.move_audio target in
-  let* () = Task.move_video target in
-  let* () = Task.move_index target in
-  let* () = Task.move_static_pages target in
-  let* () = Task.process_articles target in
-  let* () = Task.process_pages target in
-  let* () = Task.generate_gemlog target in
-  let* () = Task.generate_feed target in
-  let* () = Task.generate_tags target in
-  Task.generate_tags_index target
-
-(* Taken from https://github.com/dinosaure/blogger/blob/main/src/blogger.ml *)
-module SSH = struct
-  open Lwt.Infix
-
-  type error = Unix.error * string * string
-  type write_error = [ `Closed | `Error of Unix.error * string * string ]
-
-  let pp_error ppf (err, f, v) =
-    Fmt.pf ppf "%s(%s): %s" f v (Unix.error_message err)
-
-  let pp_write_error ppf = function
-    | `Closed -> Fmt.pf ppf "Connection closed by peer"
-    | `Error (err, f, v) -> Fmt.pf ppf "%s(%s): %s" f v (Unix.error_message err)
-
-  type flow = { ic : in_channel; oc : out_channel }
-
-  type endpoint = {
-    user : string;
-    path : string;
-    host : Unix.inet_addr;
-    port : int;
-    capabilities : [ `Rd | `Wr ];
-  }
-
-  let pp_inet_addr ppf inet_addr =
-    Fmt.string ppf (Unix.string_of_inet_addr inet_addr)
-
-  let connect { user; path; host; port; capabilities } =
-    let edn = Fmt.str "%s@%a" user pp_inet_addr host in
-    let cmd =
-      match capabilities with
-      | `Wr -> Fmt.str {sh|git-receive-pack '%s'|sh} path
-      | `Rd -> Fmt.str {sh|git-upload-pack '%s'|sh} path
-    in
-    let cmd = Fmt.str "ssh -p %d %s %a" port edn Fmt.(quote string) cmd in
-    try
-      let ic, oc = Unix.open_process cmd in
-      Lwt.return_ok { ic; oc }
-    with Unix.Unix_error (err, f, v) -> Lwt.return_error (`Error (err, f, v))
-
-  let read t =
-    let tmp = Bytes.create 0x1000 in
-    try
-      let len = input t.ic tmp 0 0x1000 in
-      if len = 0 then Lwt.return_ok `Eof
-      else Lwt.return_ok (`Data (Cstruct.of_bytes tmp ~off:0 ~len))
-    with Unix.Unix_error (err, f, v) -> Lwt.return_error (err, f, v)
-
-  let write t cs =
-    let str = Cstruct.to_string cs in
-    try
-      output_string t.oc str;
-      flush t.oc;
-      Lwt.return_ok ()
-    with Unix.Unix_error (err, f, v) -> Lwt.return_error (`Error (err, f, v))
-
-  let writev t css =
-    let rec go t = function
-      | [] -> Lwt.return_ok ()
-      | x :: r -> (
-          write t x >>= function
-          | Ok () -> go t r
-          | Error _ as err -> Lwt.return err)
-    in
-    go t css
-
-  let close t =
-    close_in t.ic;
-    close_out t.oc;
-    Lwt.return_unit
-end
-
-let ssh_edn, ssh_protocol = Mimic.register ~name:"ssh" (module SSH)
-
-let unix_ctx_with_ssh () =
-  let open Lwt.Infix in
-  Git_unix.ctx (Happy_eyeballs_lwt.create ()) >|= fun ctx ->
-  let open Mimic in
-  let k0 scheme user path host port capabilities =
-    match (scheme, Unix.gethostbyname host) with
-    | `SSH, { Unix.h_addr_list; _ } when Array.length h_addr_list > 0 ->
-        Lwt.return_some
-          { SSH.user; path; host = h_addr_list.(0); port; capabilities }
-    | _ -> Lwt.return_none
+let resolver =
+  let open Yocaml.Path in
+  let src =
+    let pages = rel [ "pages" ] in
+    let templates = rel [ "templates" ] in
+    object
+      method binary = rel [ Sys.argv.(0) ]
+      method pages = pages
+      method articles = rel [ "articles" ]
+      method media = rel [ "media" ]
+      method static = pages / "static"
+      method layout_template = templates / "layout.gmi"
+      method article_template = templates / "article.gmi"
+      method gemlog_template = templates / "gemlog.gmi"
+      method tag_template = templates / "tag.gmi"
+      method tags_index_template = templates / "tags.gmi"
+    end
   in
-  ctx
-  |> Mimic.fold Smart_git.git_transmission
-       Fun.[ req Smart_git.git_scheme ]
-       ~k:(function `SSH -> Lwt.return_some `Exec | _ -> Lwt.return_none)
-  |> Mimic.fold ssh_edn
-       Fun.
-         [
-           req Smart_git.git_scheme;
-           req Smart_git.git_ssh_user;
-           req Smart_git.git_path;
-           req Smart_git.git_hostname;
-           dft Smart_git.git_port 22;
-           req Smart_git.git_capabilities;
-         ]
-       ~k:k0
+  let dst = Resolver.make_dest ~root:(rel [ "_build"; "site" ]) in
+  Resolver.make ~src ~dst
 
-let build_and_push remote author email hook =
-  let run () =
-    let fail msg = failwith ("build-and-push: " ^ msg) in
-    let* ctx = unix_ctx_with_ssh () in
-    Yocaml_git.execute
-      (module Yocaml_unix)
-      (module Pclock)
-      ~author ~email ~ctx remote (program ~target:"")
-    >>= function
-    | Ok () -> (
-        match hook with
-        | None -> Lwt.return_unit
-        | Some hook -> (
-            match Razzia.make_request (Uri.of_string hook) with
-            | Ok req -> (
-                Razzia_unix.get req >>= function
-                | Ok (Success { body; _ }) -> Lwt_io.printl body
-                | Ok resp -> Format.kasprintf fail "%a" Razzia.pp_response resp
-                | Error err -> Format.kasprintf fail "%a" Razzia.pp_err err)
-            | Error err -> Format.kasprintf fail "%a" Razzia.pp_request_err err)
-        )
-    | Error (`Msg msg) -> Format.kasprintf fail "%s." msg
-  in
-  Lwt_main.run (run ())
+let build level = Yocaml_unix.run ~level @@ fun () -> Actions.run resolver
 
-let build dir = Yocaml_unix.execute (program ~target:dir)
+let serve port =
+  let private_of_pems ~cert ~priv_key =
+    let pem = In_channel.(with_open_text cert input_all) in
+    match X509.Certificate.decode_pem_multiple pem with
+    | Ok certs -> (
+        let pem = In_channel.(with_open_text priv_key input_all) in
+        match X509.Private_key.decode_pem pem with
+        | Ok key -> (certs, key)
+        | Error (`Msg msg) ->
+            Printf.sprintf "Private key (%s): failed to parse private key %s"
+              priv_key msg
+            |> invalid_arg)
+    | Error (`Msg msg) ->
+        Printf.sprintf
+          "Private certificates (%s): failed to parse certificates %s" cert msg
+        |> invalid_arg
+  in
+  let router =
+    let open Mehari_miou_unix in
+    let any = Mehari.Path.variable ~from_string:Option.some ~to_string:Fun.id in
+    router
+      [
+        route Mehari.Path.(~/:any) (static "./_build/site/");
+        route
+          Mehari.Path.(~/:any /: any)
+          (fun dir subdir ->
+            static "./_build/site/" (String.concat "/" [ dir; subdir ]));
+        route
+          Mehari.Path.(~/:any /: any /: any)
+          (fun dir subdir subsubdir ->
+            static "./_build/site/"
+              (String.concat "/" [ dir; subdir; subsubdir ]));
+      ]
+  in
+  Miou_unix.run @@ fun () ->
+  Mirage_crypto_rng_unix.use_default ();
+  let cert = private_of_pems ~cert:"cert.pem" ~priv_key:"key.pem" in
+  router |> Mehari_miou_unix.logger
+  |> Mehari_miou_unix.run ~port ~certs:(Single cert)
 
-let watch dir =
-  let run () =
-    let* certchains =
-      X509_lwt.private_of_pems ~cert:"cert.pem" ~priv_key:"key.pem"
-      >|= fun cert -> [ cert ]
-    in
-    M.router [ M.route ~regex:true "/(.*)" (M.static dir) ]
-    |> Mehari_lwt_unix.logger
-    |> Mehari_lwt_unix.run_lwt ~certchains
+let level =
+  let parse = function
+    | "debug" -> Ok `Debug
+    | "info" -> Ok `Info
+    | "warning" -> Ok `Warning
+    | "error" -> Ok `Error
+    | "app" -> Ok `App
+    | s -> Error (`Msg s)
   in
-  Lwt_main.run (run ())
+  let pp ppf l =
+    Format.pp_print_string ppf
+    @@
+    match l with
+    | `Debug -> "debug"
+    | `Info -> "info"
+    | `Warning -> "warning"
+    | `Error -> "error"
+    | `App -> "app"
+  in
+  Arg.conv (parse, pp)
 
-let watch_cmd =
-  let open Cmdliner in
-  let doc =
-    Format.asprintf "Serve from the specified directory as a Gemini server."
-  in
-  let default_dir = "_site" in
-  let dir_arg =
-    let doc =
-      Format.asprintf "Specify where we build the website (default: %S)"
-        default_dir
-    in
-    let arg = Arg.info ~doc [ "destination" ] in
-    Arg.(value & opt string default_dir & arg)
-  in
-  let info = Cmd.info "watch" ~doc in
-  Cmd.v info Term.(const watch $ dir_arg)
+let level_arg =
+  let arg = Arg.info ~doc:"Log level" [ "l"; "log" ] in
+  Arg.(required & opt (some level) (Some `Info) & arg)
 
 let build_cmd =
-  let open Cmdliner in
-  let doc = Format.asprintf "Build the blog into the specified directory" in
-  let default_dir = "_site" in
-  let dir_arg =
-    let doc =
-      Format.asprintf "Specify where we build the website (default: %S)"
-        default_dir
-    in
-    let arg = Arg.info ~doc [ "destination" ] in
-    Arg.(value & opt string default_dir & arg)
-  in
-  let info = Cmd.info "build" ~doc in
-  Cmd.v info Term.(const build $ dir_arg)
+  let info = Cmd.info "build" ~doc:"Build site" in
+  Cmd.v info Term.(const build $ level_arg)
 
-let push_cmd =
-  let open Cmdliner in
-  let doc = Format.asprintf "Push the blog into a Git repository" in
-  let remote_arg =
-    let remote =
-      let parser str =
-        match Smart_git.Endpoint.of_string str with
-        | Ok _ -> Ok str
-        | Error _ as err -> err
-      in
-      Arg.conv (parser, Fmt.string)
-    in
-    let doc = "The remote Git repository" in
-    let arg = Arg.info ~doc [ "r"; "remote" ] in
-    Arg.(required & opt (some remote) None & arg)
+let serve_cmd =
+  let info = Cmd.info "serve" ~doc:"Serve site" in
+  let port_arg =
+    let doc = "Port to listen to" in
+    Arg.(value & opt int 8000 & info ~doc [ "p"; "port" ])
   in
-  let hook_arg =
-    let doc = "The URL of the hook to update the unikernel" in
-    let arg = Arg.info ~doc [ "h"; "hook" ] in
-    Arg.(value & opt (some string) None & arg)
-  in
-  let name_arg =
-    let doc = "Name of the committer." in
-    Cmdliner.Arg.(value & opt string "" & info [ "name" ] ~doc)
-  in
-  let email_arg =
-    let doc = "Email of the committer." in
-    Cmdliner.Arg.(value & opt string "" & info [ "email" ] ~doc)
-  in
-  let info = Cmd.info "push" ~doc in
-  Cmd.v info
-    Term.(const build_and_push $ remote_arg $ name_arg $ email_arg $ hook_arg)
+  Cmd.v info Term.(const serve $ port_arg)
 
 let cmd =
-  let open Cmdliner in
   let default_info = Cmd.info Sys.argv.(0) in
-  Cmd.group default_info [ build_cmd; watch_cmd; push_cmd ]
+  Cmd.group default_info [ build_cmd; serve_cmd ]
 
 let () =
   Logs.set_level (Some Info);

@@ -1,4 +1,4 @@
-```garden page’s banner
+```garden page's banner
                .{{}}}}}}.
               {{{{{{(`)}}}.
              {{{(`)}}}}}}}}}
@@ -13,12 +13,12 @@
 ~~~;|.~~vWv~~//~/\\/\/\/\~~vWv~~~\\||//~~~\\;~\\~~~vWvWv~~
 ```
 
-# 🌲 Le jardin d’heyplzlookat.me
+# 🌲 Le jardin d'heyplzlookat.me
 
-=> gemini://astrobotany.mozz.us/public/1e27ec366d9f4f86a36091b52abc5eb0 🌹 Artichaut’s plant
-=> gemini://astrobotany.mozz.us/public/c96e4b038fa249c4a53d3a4c63b5a03a 🌺 Tim’s plant
+=> gemini://astrobotany.mozz.us/public/1e27ec366d9f4f86a36091b52abc5eb0 🌹 Artichaut's plant
+=> gemini://astrobotany.mozz.us/public/c96e4b038fa249c4a53d3a4c63b5a03a 🌺 Tim's plant
 
 ## 🎨 En couleurs
 
-=> gemini://astrobotany.mozz.us/public/1e27ec366d9f4f86a36091b52abc5eb0/m1 🥀 Artichaut’s plant
-=> gemini://astrobotany.mozz.us/public/c96e4b038fa249c4a53d3a4c63b5a03a/m1 🌻 Tim’s plant
+=> gemini://astrobotany.mozz.us/public/1e27ec366d9f4f86a36091b52abc5eb0/m1 🥀 Artichaut's plant
+=> gemini://astrobotany.mozz.us/public/c96e4b038fa249c4a53d3a4c63b5a03a/m1 🌻 Tim's plant

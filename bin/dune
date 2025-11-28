@@ -1,16 +1,15 @@
 (executable
  (name capsule)
+ (public_name capsule)
  (libraries
-  git-unix
-  mehari
-  mehari-lwt-unix
-  logs
-  lwt
-  razzia
-  razzia-unix
+  cmdliner
+  mehari-miou-unix
+  mirage-crypto-rng.unix
+  uri
   yocaml
-  yocaml_git
   yocaml_yaml
   yocaml_unix
   yocaml_jingoo
   yocaml_syndication))
+
+(include_subdirs qualified)

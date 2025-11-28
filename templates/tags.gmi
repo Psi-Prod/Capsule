@@ -1,5 +1,5 @@
 # Filtrer les posts par étiquette
 
 {% for tag in tags -%}
-=> /{{ tag.link  }} {{ tag.name }} {{ tag.number }}
+=> {{ tag.link  }} {{ tag.name }} {{ tag.number }}
 {% endfor %}

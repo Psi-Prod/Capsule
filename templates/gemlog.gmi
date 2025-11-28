@@ -9,7 +9,7 @@
 {%- autoescape false %}
 
 {% for article in articles -%}
-=> {{ article.url }} {{ article.date.canonical }} {{ article.title }}
+=> {{ article.link }} {{ article.date.repr.date }} {{ article.title }}
 {% endfor %}
 
 {%- endautoescape -%}
